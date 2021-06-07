@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <fromMail>elbitsystems@cvwebmail.com</fromMail>
+    <toMail>elbitsystems@cvwebmail.com</toMail>
+    <fromName>Elbit Campaign Site</fromName>
+    <nsoftSiteId>54db0aad-09b9-4954-a9d4-33512df547fb</nsoftSiteId>
+    <nsoftApplicationId>54db0aad-09b9-4954-a9d4-33512df547fb</nsoftApplicationId>
+    <categorySupplierId>e48f8706-d313-4e60-bce4-5fcbb45e3514</categorySupplierId>
+    <nlsCardsWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</nlsCardsWsdlUrl>
+    <nlsSecurityWsdlUrl>https://hunterdirectory.hunterhrms.com/SecurityService.svc?wsdl</nlsSecurityWsdlUrl>
+    <nlsDirectoryWsdlUrl>https://hunterdirectory.hunterhrms.com/DirectoryManagementService.svc?wsdl</nlsDirectoryWsdlUrl>
+    <nlsSecurityDomain>elbitsys</nlsSecurityDomain>
+    <nlsSecurityUsername>Joomlasite</nlsSecurityUsername>
+    <nlsSecurityPassword>pass2017</nlsSecurityPassword>
+    <searchServiceWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</searchServiceWsdlUrl>
+    <languageCode>1033</languageCode>
+    <categoryIDs/>
+    <trace>1</trace>
+    <exceptions>1</exceptions>
+    <cacheWsdl>3</cacheWsdl>
+    <siteAddress>https://elbit.co.il/</siteAddress>
+</root>
