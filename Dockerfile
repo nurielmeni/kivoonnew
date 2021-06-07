@@ -10,6 +10,8 @@ FROM yiisoftware/yii2-php:7.4-apache
 RUN docker-php-ext-enable xdebug --ini-name 10-docker-php-ext-xdebug.ini
 COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
+
+
 WORKDIR /app
 #RUN pecl install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
@@ -17,6 +19,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');"
 
+COPY ./composer.json ./
 RUN composer update
 
 # Change document root for Apache (for backend)

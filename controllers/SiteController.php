@@ -13,9 +13,9 @@ use app\models\Campaign;
 use app\models\Team;
 use app\models\Search;
 use yii\web\UploadedFile;
-use app\controllers\ElbitController;
+use app\controllers\BaseController;
 
-class SiteController extends ElbitController
+class SiteController extends BaseController
 {
     public $defaultAction = 'contact';
 
@@ -103,36 +103,9 @@ class SiteController extends ElbitController
      *
      * @return Response|string
      */
-    public function actionContact($id)
+    public function actionIndex()
     {
-        $campaign = $this->validCampaign($id);
-        $supplierId = Yii::$app->request->get('sid', (empty($campaign->sid) ? Yii::$app->params['supplierId'] : $campaign->sid));
-        $campaign->hits += 1;
-        $campaign->save(false, ['hits']);
-
-        $search = new Search($supplierId);
-        $team = new Team();
-
-        return $this->render('contact', [
-            'campaign' => $campaign,
-            'jobs' => $search->jobs(true),
-            'people' => $team->find()->all(),
-        ]);
-    }
-
-    private function validCampaign($id)
-    {
-        $campaign = Campaign::findOne($id);
-
-        if ($campaign === null) {
-            throw new \yii\web\NotFoundHttpException(Yii::t('app', 'A campaign with this ID could not be found'));
-        }
-
-        $now = time();
-        if ($campaign->start_date_int > $now || (isset($campaign->end_date_int) && $campaign->end_date_int < $now)) {
-            throw new \yii\web\NotFoundHttpException(Yii::t('app', 'The campaign is not active!'));
-        }
-        return $campaign;
+        return $this->render('index', []);
     }
 
     public function actionApply()
@@ -154,7 +127,7 @@ class SiteController extends ElbitController
 
         $model = new ContactForm();
         $model->supplierId = Yii::$app->request->get('sid', (empty($campaign->sid) ? Yii::$app->params['supplierId'] : $campaign->sid));
-        
+
         $count = 0;
         if ($model->load(Yii::$app->request->post(), '')) {
             $model->cvfile = UploadedFile::getInstance($model, 'cvfile');
