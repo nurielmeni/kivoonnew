@@ -9,8 +9,13 @@ use app\widgets\sumoSelect\assets\SumoSelectAsset;
 class SumoSelectWidget extends Widget
 {
 
-
+    /**
+     * Must be unique name
+     */
     public $name = '';
+    /**
+     * @options: Array of value => text pairs
+     */
     public $options = [];
     public $multiple = false;
     public $config = [
