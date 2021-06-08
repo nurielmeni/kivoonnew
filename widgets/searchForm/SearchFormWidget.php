@@ -10,7 +10,7 @@ class SearchFormWidget extends Widget
 {
 
 
-    public $name = 'submit-popup';
+    public $name = 'search-form';
     public $cssClass = '';
     public $resultsWrapperElementId = 'search-results';
     public $applyUrl;
@@ -29,7 +29,7 @@ class SearchFormWidget extends Widget
     {
         return $this->render('searchForm', [
             'name' => $this->name,
-            'class' => $this->cssClass,
+            'cssClass' => $this->cssClass,
             'resultsWrapperElementId' => $this->resultsWrapperElementId,
             'applyUrl' => $this->applyUrl,
         ]);

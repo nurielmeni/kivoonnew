@@ -1,6 +1,8 @@
 <?php
 
 use yii\helpers\Url;
+use app\widgets\SearchForm\SearchFormWidget;
+
 ?>
 
 <header class="overlay white">
@@ -23,5 +25,7 @@ use yii\helpers\Url;
         <h1 class="text-center">
             בואו למצוא קריירה!
         </h1>
+
+        <?= SearchFormWidget::widget() ?>
     </div>
 </header>

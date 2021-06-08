@@ -15,10 +15,10 @@ class SumoSelectAsset extends AssetBundle
     ];
     public $sourcePath = '@app/widgets/sumoSelect/assets';
     public $css = [
-        'css/sumoSelect.css',
+        'css/sumoselect.min.css',
     ];
     public $js = [
-        'js/sumoSelect.js',
+        'js/jquery.sumoselect.min.js',
     ];
 
     public $depends = [
