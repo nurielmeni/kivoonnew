@@ -12,6 +12,7 @@ class SumoSelectWidget extends Widget
 
     public $name = '';
     public $options = [];
+    public $multiple = false;
     public $config = [
         'placeholder' => 'בחר כאן',
         'csvDispCount' => 2,
@@ -50,29 +51,8 @@ class SumoSelectWidget extends Widget
         return $this->render('sumoSelect', [
             'name' => $this->name,
             'options' => $this->options,
+            'multiple' => $this->multiple,
             'config' => $this->config,
-            // [
-            //     'placeholder' => $this->placeholder,
-            //     'csvDispCount' => $this->csvDispCount,
-            //     'captionFormat' => $this->captionFormat,
-            //     'captionFormatAllSelected' => $this->captionFormatAllSelected,
-            //     'floatWidth' => $this->floatWidth,
-            //     'forceCustomRendering' => $this->forceCustomRendering,
-            //     'nativeOnDevice' => $this->nativeOnDevice,
-            //     'outputAsCSV' => $this->outputAsCSV,
-            //     'csvSepChar' => $this->csvSepChar,
-            //     'okCancelInMulti' => $this->okCancelInMulti,
-            //     'isClickAwayOk' => $this->isClickAwayOk,
-            //     'triggerChangeCombined' => $this->triggerChangeCombined,
-            //     'selectAll' => $this->selectAll,
-            //     'search' => $this->search,
-            //     'searchText' => $this->searchText,
-            //     'noMatch' => $this->noMatch,
-            //     'prefix' => $this->prefix,
-            //     'locale' => $this->locale,
-            //     'up' => $this->up,
-            //     'showTitle' => $this->showTitle,
-            // ]
         ]);
     }
 }

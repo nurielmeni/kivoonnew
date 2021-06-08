@@ -64,7 +64,7 @@ $config = [
                 ],
             ],
         ],
-//        'db' => $db,
+        //        'db' => $db,
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -72,6 +72,7 @@ $config = [
         ],
     ],
     'params' => $params,
+    'defaultRoute' => 'site/index'
 ];
 
 if (YII_ENV_DEV) {

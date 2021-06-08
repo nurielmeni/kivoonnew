@@ -5,7 +5,7 @@ use app\helpers\Helper;
 $sumoConfig = json_encode($config);
 ?>
 
-<select id="<?= $name ?>" class="sumo-select">
+<select id="<?= $name ?>" <?= $multiple ? 'multiple="multiple"' : '' ?> class="sumo-select">
     <?php foreach ($options as $value => $text) : ?>
         <option value="<?= $value ?>"><?= $text ?></option>
     <?php endforeach; ?>
