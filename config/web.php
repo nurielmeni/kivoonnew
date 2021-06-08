@@ -1,11 +1,11 @@
 <?php
 
 $params = require __DIR__ . '/params.php';
-$db = require __DIR__ . '/db.php';
+//$db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'elbit-campaign',
-    'name' => 'אלביט - חיפוש משרה',
+    'name' => 'כיוון - חיפוש משרה',
     'language' => 'he-IL',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -64,7 +64,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
+//        'db' => $db,
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
