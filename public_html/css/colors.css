@@ -8,20 +8,44 @@ and open the template in the editor.
     Author     : Nurielmeni
 */
 
-.bg-white { background-color: #ffffff; }
-.fg-white { color: #ffffff; }
+.bg-white {
+  background-color: #ffffff;
+}
+.fg-white {
+  color: #ffffff;
+}
 
-.bg-black { background-color: #000000; }
-.fg-black { color: #000000; }
+.bg-black {
+  background-color: #000000;
+}
+.fg-black {
+  color: #000000;
+}
 
-.bg-blue { background-color: #1366B1; }
-.fg-blue { color: #1366B1; }
+.bg-blue {
+  background-color: #5378ae;
+}
+.fg-blue {
+  color: #5378ae;
+}
 
-.bg-dark-gray { background-color: #7B7B7B; }
-.fg-dark-gray { color: #7B7B7B; }
+.bg-dark-gray {
+  background-color: #7b7b7b;
+}
+.fg-dark-gray {
+  color: #7b7b7b;
+}
 
-.bg-light-bleu { background-color: #D1E1F0; }
-.fg-light-blue { color: #D1E1F0; }
+.bg-light-bleu {
+  background-color: #d1e1f0;
+}
+.fg-light-blue {
+  color: #d1e1f0;
+}
 
-.bg-yellow { background-color: #FFDB00; }
-.fg-yellow { color: #FFDB00; }
+.bg-yellow {
+  background-color: #ffdb00;
+}
+.fg-yellow {
+  color: #ffdb00;
+}

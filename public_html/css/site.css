@@ -5,7 +5,8 @@
 html,
 body {
   height: 100%;
-  font-family: "Heebo", sans-serif;
+  font-family: "Rubik", sans-serif;
+  color: #5378ae;
 }
 
 /*******  HEADER  *******/
@@ -40,6 +41,12 @@ header {
   z-index: 20;
 }
 
+.logo-sofi {
+  height: 100px;
+  margin: 10px;
+  object-fit: contain;
+}
+
 div.header-content {
   position: relative;
   z-index: 100;
@@ -51,10 +58,11 @@ ul.social li {
 }
 
 ul.social li a {
-  text-decoration: none;
   cursor: pointer;
-  font-size: 2rem;
-  font-weight: 900;
-  padding: 0 0.75rem;
-  color: blue;
+  padding: 0 0.5rem;
+  text-decoration: none;
+}
+
+ul.social li a img {
+  height: 3rem;
 }

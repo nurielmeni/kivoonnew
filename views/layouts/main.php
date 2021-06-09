@@ -28,7 +28,7 @@ AppAsset::register($this);
     <meta property="og:image" content="<?= Url::to('@web/uploads/images/ogimage.png') ?>" />
 
     <!-- GOOGLE FONTS HEEBO -->
-    <link href="https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900&display=swap&subset=hebrew" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:100,300,400,500,700,800,900&display=swap&subset=hebrew" rel="stylesheet">
 
     <!-- QUILL JS -->
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
