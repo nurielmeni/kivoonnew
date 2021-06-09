@@ -1,11 +1,15 @@
 <?php
 
 use app\helpers\Helper;
+use app\widgets\SumoSelect\SumoSelectWidget;
+
 ?>
 
 <div id="<?= $name ?>" class="submit-form flex space-around <?= $cssClass ?>">
 	<form enctype="multipart/form-data">
-
+		<?= SumoSelectWidget::widget(['name' => 'my-sumo']) ?>
+		<?= SumoSelectWidget::widget(['multiple' => true, 'options' => ['1' => 'Named Options', '2' => 'Another one']]) ?>
+		<?= SumoSelectWidget::widget(['config' => ['placeholder' => 'Test place holder']]) ?>
 	</form>
 </div>
 <?php
