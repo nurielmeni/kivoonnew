@@ -68,10 +68,13 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [],
+            'rules' => [
+                '<action:\w+>' => 'site/<action>',
+            ],
         ],
     ],
     'params' => $params,
+    'defaultRoute' => 'site/index',
 ];
 
 if (YII_ENV_DEV) {

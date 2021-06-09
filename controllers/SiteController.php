@@ -68,12 +68,12 @@ class SiteController extends BaseController
     {
         $this->layout = 'main_admin';
         if (!Yii::$app->user->isGuest) {
-            return $this->redirect(['/campaign/index']);
+            return $this->redirect(['/site/index']);
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect(['/campaign/index']);
+            return $this->redirect(['/site/index']);
         }
 
         $model->password = '';
@@ -92,7 +92,7 @@ class SiteController extends BaseController
         $this->layout = 'main_admin';
         Yii::$app->user->logout();
 
-        return $this->redirect(['/campaign/index']);
+        return $this->redirect(['/site/index']);
     }
 
     /**
