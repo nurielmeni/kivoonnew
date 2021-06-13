@@ -7,3 +7,68 @@ and open the template in the editor.
     Created on : Jan 2, 2019, 12:14:26 AM
     Author     : Nurielmeni
 */
+
+div.search-form {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+div.search-form > form > div {
+  margin-bottom: 1rem;
+}
+
+div.search-form > form > div.SumoSelect {
+  max-width: 375px;
+  width: 36%;
+}
+
+div.search-form > form > div.btn > button {
+  width: 150px;
+}
+
+div.search-form .SumoSelect > .CaptionCont,
+div.search-form > form > div.btn > button {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  border-radius: 8px;
+}
+
+div.search-form .SumoSelect.open > .optWrapper {
+  top: 3.6rem;
+}
+
+div.search-form .SumoSelect > .optWrapper {
+  border-radius: 8px;
+}
+
+div.search-form .SumoSelect .select-all {
+  height: auto;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  font-weight: lighter;
+}
+
+/****** RESPONSIVE DESIGN ********/
+@media all and (max-width: 999.9px) {
+}
+
+@media all and (max-width: 679.9px) {
+  div.search-form > form {
+    flex-direction: column;
+  }
+
+  div.search-form > form > div.SumoSelect {
+    width: 100%;
+  }
+
+  div.search-form .SumoSelect > .CaptionCont,
+  div.search-form > form > div.btn > button {
+    height: 3rem;
+  }
+}
+
+@media all and (min-width: 680px) {
+}

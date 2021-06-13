@@ -24,8 +24,8 @@ class AppAsset extends AssetBundle
         'css/colors.css',
         'css/flex.css',
         'css/normalize.css',
-        'css/responsives.css',
         'css/site.css',
+        'css/responsives.css',
     ];
     public $js = [
         'js/app.js',

@@ -43,9 +43,9 @@ and open the template in the editor.
   color: #d1e1f0;
 }
 
-.bg-yellow {
-  background-color: #ffdb00;
+.bg-green {
+  background-color: #6fad3d;
 }
-.fg-yellow {
-  color: #ffdb00;
+.fg-green {
+  color: #6fad3d;
 }

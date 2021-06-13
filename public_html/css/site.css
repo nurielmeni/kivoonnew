@@ -15,6 +15,10 @@ header {
   z-index: 10;
 }
 
+.header-content h1 {
+  font-size: 5rem;
+}
+
 .overlay:after {
   content: " ";
   position: absolute;
