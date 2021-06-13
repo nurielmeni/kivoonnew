@@ -15,6 +15,20 @@ $config = [
         '@web'   => '@app/public_html'
     ],
     'components' => [
+        'socialShare' => [
+            'class' => \ymaker\social\share\configurators\Configurator::class,
+            'socialNetworks' => [
+                'facebook' => [
+                    'class' => \ymaker\social\share\drivers\Facebook::class,
+                ],
+                'linkedIn' => [
+                    'class' => \ymaker\social\share\drivers\LinkedIn::class,
+                ],
+                'whatsapp' => [
+                    'class' => \ymaker\social\share\drivers\WhatsApp::class,
+                ],
+            ],
+        ],
         'i18n' => [
             'translations' => [
                 'app*' => [
