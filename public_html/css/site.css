@@ -7,6 +7,7 @@ body {
   height: 100%;
   font-family: "Rubik", sans-serif;
   color: #5378ae;
+  background-color: #efefef;
 }
 
 /*******  HEADER  *******/
@@ -70,3 +71,92 @@ ul.social li a {
 ul.social li a img {
   height: 3rem;
 }
+
+/********   BG BORDERED CIRCLE    ********/
+.bg-bordered-circle {
+  content: " ";
+  background-color: white;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.bg-bordered-circle::after {
+  content: " ";
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 0.5px solid #d0d0d0;
+  position: absolute;
+  z-index: 2;
+}
+
+.bg-bordered-circle > * {
+  position: relative;
+  z-index: 3;
+}
+
+/************   SOCIAL SHARE   ***********/
+
+ul.social-share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+ul.social-share li {
+  list-style: none;
+  margin: 0 0.5rem;
+}
+
+ul.social-share li a {
+  text-decoration: none;
+}
+
+/************     DIVIDER      ***********/
+.arroe-divider {
+  height: 4px;
+  position: relative;
+  z-index: 40;
+}
+
+.arroe-divider:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid;
+  left: calc(50% - 1rem);
+}
+/************      HEADER      ***********/
+section.social-share-header {
+  padding: 1.75rem 0 2rem;
+}
+
+section.social-share-header h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+section.social-share-header i.si,
+section.social-share-header i.si:visited,
+section.social-share-header i.si:active,
+section.social-share-header i.si:focus {
+  color: #5378ae;
+  font-size: 1.5rem;
+}
+/************      FOOTER      ***********/
+
+/************ END SOCIAL SHARE ***********/

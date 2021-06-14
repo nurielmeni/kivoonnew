@@ -25,7 +25,7 @@ AppAsset::register($this);
     <meta property="og:title" content="Kivoon" />
     <meta property="og:description" content="" />
     <meta property="og:locale" content="he_IL" />
-    <meta property="og:image" content="<?= Url::to('@web/uploads/images/ogimage.png') ?>" />
+    <meta property="og:image" content="<?= Url::to('@web/images/logo/logo_sofi@x3.png') ?>" />
 
     <!-- GOOGLE FONTS HEEBO -->
     <link href="https://fonts.googleapis.com/css?family=Rubik:100,300,400,500,700,800,900&display=swap&subset=hebrew" rel="stylesheet">
@@ -34,7 +34,7 @@ AppAsset::register($this);
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <!-- ICON -->
-    <link rel="shortcut icon" href="<?= Url::to('@web/uploads/images/logo.png') ?>">
+    <link rel="shortcut icon" href="<?= Url::to('@web/images/logo/logo_sofi.png') ?>">
 
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>

@@ -38,15 +38,7 @@ use app\widgets\SearchForm\SearchFormWidget;
 
         <?= SearchFormWidget::widget() ?>
 
+        <?= $this->render('_headerSocial') ?>
 
-        <?= \ymaker\social\share\widgets\SocialShare::widget([
-            'configurator' => 'socialShare',
-            //'url'          => \yii\helpers\Url::to('absolute/route/to/page', true),
-            'url'          => 'https://elbit-campaign.hunterhrms.com/2',
-            'title'        => 'Title of the page',
-            'description'  => 'Description of the page...',
-            //'imageUrl'     => \yii\helpers\Url::to('absolute/route/to/image.png', true),
-            'imageUrl'     => 'https://elbit-campaign.hunterhrms.com/images/logo-v2.png'
-        ]); ?>
     </div>
 </header>

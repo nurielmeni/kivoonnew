@@ -15,7 +15,22 @@
   .header-content > section {
     justify-content: center !important;
   }
+
+  .xs-down {
+    display: block;
+  }
+
+  .xs-up {
+    display: none;
+  }
 }
 
 @media all and (min-width: 768px) {
+  .xs-down {
+    display: none;
+  }
+
+  .xs-up {
+    display: block;
+  }
 }

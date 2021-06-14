@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="headphones" width="68.399" height="77.823" viewBox="0 0 68.399 77.823">
+    <defs>
+        <style>
+            .cls-1{fill:#5378ae}
+        </style>
+    </defs>
+    <g id="Group_502" transform="translate(9.12 31.92)">
+        <g id="Group_501">
+            <path id="Path_801" d="M97.84 210a6.847 6.847 0 0 0-6.84 6.84v18.544a6.84 6.84 0 0 0 13.68 0V216.84a6.847 6.847 0 0 0-6.84-6.84z" class="cls-1" transform="translate(-91 -210)"/>
+        </g>
+    </g>
+    <g id="Group_504" transform="translate(0 36.839)">
+        <g id="Group_503">
+            <path id="Path_802" d="M35.56 244.286a11.312 11.312 0 0 1 .194-1.92 6.826 6.826 0 0 0-4.754 6.48v9.424a6.826 6.826 0 0 0 4.754 6.48 11.312 11.312 0 0 1-.194-1.92z" class="cls-1" transform="translate(-31 -242.366)"/>
+        </g>
+    </g>
+    <g id="Group_506" transform="translate(27.36 31.92)">
+        <g id="Group_505">
+            <path id="Path_803" d="M236.08 210a6.847 6.847 0 0 0-6.84 6.84v18.544a6.847 6.847 0 0 0 6.84 6.84 6.747 6.747 0 0 0 1.96-.32 6.826 6.826 0 0 1-6.519 4.88h-7.26a6.84 6.84 0 1 0 0 4.56h7.26a11.413 11.413 0 0 0 11.4-11.4v-23.1A6.847 6.847 0 0 0 236.08 210z" class="cls-1" transform="translate(-211 -210)"/>
+        </g>
+    </g>
+    <g id="Group_508" transform="translate(63.645 36.839)">
+        <g id="Group_507">
+            <path id="Path_804" d="M449.722 242.366a11.31 11.31 0 0 1 .194 1.92v18.544a11.31 11.31 0 0 1-.194 1.92 6.826 6.826 0 0 0 4.754-6.48v-9.424a6.826 6.826 0 0 0-4.754-6.48z" class="cls-1" transform="translate(-449.722 -242.366)"/>
+        </g>
+    </g>
+    <g id="Group_510">
+        <g id="Group_509">
+            <path id="Path_805" d="M65.2 0A34.237 34.237 0 0 0 31 34.2v.058a11.29 11.29 0 0 1 4.664-2.118 29.6 29.6 0 0 1 59.07 0 11.294 11.294 0 0 1 4.666 2.118V34.2A34.237 34.237 0 0 0 65.2 0z" class="cls-1" transform="translate(-31)"/>
+        </g>
+    </g>
+</svg>
