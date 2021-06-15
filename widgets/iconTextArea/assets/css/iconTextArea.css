@@ -25,6 +25,7 @@ div.icon-text-area > h3 {
 div.icon-text-area > div {
   font-size: 36px;
   font-weight: normal;
+  padding: 0 0.8rem;
 }
 
 div.icon-text-area .bg-bordered-circle {

@@ -44,6 +44,7 @@ header {
   width: 100%;
   height: auto;
   z-index: 20;
+  opacity: 0.2;
 }
 
 .logo-sofi {
@@ -143,6 +144,7 @@ ul.social-share li a {
 /************      HEADER      ***********/
 section.social-share-header {
   padding: 1.75rem 0 2rem;
+  margin-top: 80px;
 }
 
 section.social-share-header h2 {
@@ -164,9 +166,11 @@ section.social-share-header i.si:focus {
 /************      FOOTER      ***********/
 footer {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  z-index: 100;
 }
 
 footer > p > a {

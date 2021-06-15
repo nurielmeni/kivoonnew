@@ -17,6 +17,7 @@ div.search-form {
 
 div.search-form > form > div {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 div.search-form > form > div.SumoSelect {

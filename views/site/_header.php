@@ -8,10 +8,11 @@ $navItems = require __DIR__ . '/_navItems.php';
 
 ?>
 
-<header class="overlay white">
+<header>
     <video id="video-background" poster="poster.jpg" autoplay muted loop>
         <source src="<?= Url::to('@web/videos/bgvideo.mp4') ?>" type="video/mp4">
     </video>
+
     <div class="header-content">
         <section class="flex space-between">
             <img src="<?= Url::to('@web/images/logo/logo_sofi.png') ?>" srcset="<?= Url::to('@web/images/logo/logo_sofi@2x.png') ?> 2x, <?= Url::to('@web/images/logo/logo_sofi@3x.png') ?> 3x" class="logo-sofi" alt="Logo Kivoon">
@@ -36,7 +37,7 @@ $navItems = require __DIR__ . '/_navItems.php';
 
         <?= SearchFormWidget::widget() ?>
 
-        <?= NavWidget::widget(['items' => $navItems]) ?>
+        <?= NavWidget::widget(['items' => $navItems, 'cssClass' => 'xs-up']) ?>
 
         <?= $this->render('_headerSocial') ?>
 
