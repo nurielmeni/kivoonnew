@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 2, 2019, 12:14:26 AM
+    Author     : Nurielmeni
+*/
+nav.kivoon-nav {
+  width: 100%;
+  margin: 0 auto;
+  padding: 180px 0 110px;
+}
+
+nav.kivoon-nav .bg-bordered-circle {
+  width: 110px;
+  height: 110px;
+}
+
+nav.kivoon-nav .bg-bordered-circle::after {
+  width: 104px;
+  height: 104px;
+}
+
+nav.kivoon-nav ul {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+nav.kivoon-nav ul li {
+  text-align: center;
+  margin: 0 auto;
+  list-style: none;
+}
+
+nav.kivoon-nav ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+@media all and (min-width: 680px) {
+}

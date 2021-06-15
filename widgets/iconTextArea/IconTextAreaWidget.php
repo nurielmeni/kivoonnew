@@ -12,7 +12,7 @@ class IconTextAreaWidget extends Widget
 
     public $name = 'search-form';
     public $cssClass = '';
-    public $size = 42;
+    public $size = 44;
     public $image = '';
     public $title = '';
     public $content = '';

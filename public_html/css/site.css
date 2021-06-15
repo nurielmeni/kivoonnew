@@ -76,8 +76,8 @@ ul.social li a img {
 .bg-bordered-circle {
   content: " ";
   background-color: white;
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,8 +89,8 @@ ul.social li a img {
 .bg-bordered-circle::after {
   content: " ";
   background-color: white;
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,3 +160,29 @@ section.social-share-header i.si:focus {
 /************      FOOTER      ***********/
 
 /************ END SOCIAL SHARE ***********/
+
+/************      FOOTER      ***********/
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer > p > a {
+  text-decoration: none;
+  font-size: 10px;
+}
+
+footer ul.social-share {
+  margin: 0;
+}
+
+footer i.si,
+footer i.si:visited,
+footer i.si:active,
+footer i.si:focus {
+  color: white;
+  font-size: 1.7rem;
+}
+/************    END FOOTER    ***********/

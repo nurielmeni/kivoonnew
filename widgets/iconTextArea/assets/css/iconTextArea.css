@@ -15,7 +15,26 @@ div.icon-text-area {
   padding-top: 2rem;
 }
 
-div.icon-text-area {
+div.icon-text-area > h3 {
+  font-size: 48px;
+  font-weight: normal;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+div.icon-text-area > div {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+div.icon-text-area .bg-bordered-circle {
+  width: 72px;
+  height: 72px;
+}
+
+div.icon-text-area .bg-bordered-circle:after {
+  width: 66px;
+  height: 66px;
 }
 
 /****** RESPONSIVE DESIGN ********/
@@ -23,6 +42,28 @@ div.icon-text-area {
 }
 
 @media all and (max-width: 679.9px) {
+  div.icon-text-area .bg-bordered-circle > img {
+    width: 30px;
+  }
+
+  div.icon-text-area > h3 {
+    font-size: 1.5rem;
+  }
+
+  div.icon-text-area > div {
+    font-size: 1rem;
+    padding: 0 0.8rem;
+  }
+
+  div.icon-text-area .bg-bordered-circle {
+    width: 52px;
+    height: 52px;
+  }
+
+  div.icon-text-area .bg-bordered-circle:after {
+    width: 46px;
+    height: 46px;
+  }
 }
 
 @media all and (min-width: 680px) {

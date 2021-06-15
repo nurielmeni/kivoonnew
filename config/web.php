@@ -1,6 +1,8 @@
 <?php
 
 $params = require __DIR__ . '/params.php';
+$socialShareBgCircle = require __DIR__ . '/socialShareBgCircle.php';
+$socialShare = require __DIR__ . '/socialShare.php';
 //$db = require __DIR__ . '/db.php';
 
 $config = [
@@ -15,46 +17,8 @@ $config = [
         '@web'   => '@app/public_html'
     ],
     'components' => [
-        'socialShareBgCircle' => [
-            'class' => \ymaker\social\share\configurators\Configurator::class,
-            'socialNetworks' => [
-                'facebook' => [
-                    'class' => \ymaker\social\share\drivers\Facebook::class,
-                    'label' => \yii\helpers\Html::tag('i', '', ['class' => 'si si-facebook']),
-                    'options' => ['class' => 'fb bg-bordered-circle'],
-                ],
-                'linkedIn' => [
-                    'class' => \ymaker\social\share\drivers\LinkedIn::class,
-                    'label' => \yii\helpers\Html::tag('i', '', ['class' => 'si si-linkedin']),
-                    'options' => ['class' => 'in bg-bordered-circle'],
-                ],
-                'whatsapp' => [
-                    'class' => app\helpers\SocialSahreWhatsapp::class,
-                    'label' => \yii\helpers\Html::tag('i', '', ['class' => 'si si-whatsapp']), 
-                    'options' => ['class' => 'wa bg-bordered-circle'],
-                ]
-            ],
-        ],
-        'socialShare' => [
-            'class' => \ymaker\social\share\configurators\Configurator::class,
-            'socialNetworks' => [
-                'facebook' => [
-                    'class' => \ymaker\social\share\drivers\Facebook::class,
-                    'label' => \yii\helpers\Html::tag('i', '', ['class' => 'si si-facebook']),
-                    'options' => ['class' => 'fb'],
-                ],
-                'linkedIn' => [
-                    'class' => \ymaker\social\share\drivers\LinkedIn::class,
-                    'label' => \yii\helpers\Html::tag('i', '', ['class' => 'si si-linkedin']),
-                    'options' => ['class' => 'in'],
-                ],
-                'whatsapp' => [
-                    'class' => app\helpers\SocialSahreWhatsapp::class,
-                    'label' => \yii\helpers\Html::tag('i', '', ['class' => 'si si-whatsapp']), 
-                    'options' => ['class' => 'wa'],
-                ]
-            ],
-        ],
+        'socialShareBgCircle' => $socialShareBgCircle,
+        'socialShare' => $socialShare,
         'i18n' => [
             'translations' => [
                 'app*' => [
