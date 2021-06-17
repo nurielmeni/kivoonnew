@@ -58,21 +58,6 @@ div.header-content {
   z-index: 100;
 }
 
-ul.social li {
-  list-style: none;
-  display: inline;
-}
-
-ul.social li a {
-  cursor: pointer;
-  padding: 0 0.5rem;
-  text-decoration: none;
-}
-
-ul.social li a img {
-  height: 3rem;
-}
-
 /********   BG BORDERED CIRCLE    ********/
 .bg-bordered-circle {
   content: " ";
@@ -188,5 +173,9 @@ footer i.si:active,
 footer i.si:focus {
   color: white;
   font-size: 1.7rem;
+}
+
+footer section.social-icons ul {
+  margin: 0;
 }
 /************    END FOOTER    ***********/

@@ -17,8 +17,8 @@ $config = [
         '@web'   => '@app/public_html'
     ],
     'components' => [
-        'socialShareBgCircle' => $socialShareBgCircle,
-        'socialShare' => $socialShare,
+        //'socialShareBgCircle' => $socialShareBgCircle,
+        //'socialShare' => $socialShare,
         'i18n' => [
             'translations' => [
                 'app*' => [

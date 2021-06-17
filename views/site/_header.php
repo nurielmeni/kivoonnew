@@ -16,19 +16,19 @@ $navItems = require __DIR__ . '/_navItems.php';
     <div class="header-content">
         <section class="flex space-between">
             <img src="<?= Url::to('@web/images/logo/logo_sofi.png') ?>" srcset="<?= Url::to('@web/images/logo/logo_sofi@2x.png') ?> 2x, <?= Url::to('@web/images/logo/logo_sofi@3x.png') ?> 3x" class="logo-sofi" alt="Logo Kivoon">
-
-            <ul class="social">
-                <li>
-                    <a href="#" title="דף לינקדאין של כיוון" tabindex="1">
-                        <img src="<?= Url::to('@web/images/icons/in.svg') ?>" alt="LinkedIn">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="דף פייסבוק של כיוון" tabindex="2">
-                        <img src="<?= Url::to('@web/images/icons/f.svg') ?>" alt="Facebook">
-                    </a>
-                </li>
-            </ul>
+            <?= \nurielmeni\socialConnect\socialConnectWidget::widget([
+                'cssClass' => 'xs-up',
+                'size' => '38px',
+                'color' => '#5378ae',
+                'items' => [
+                    'facebook' => [
+                        'url' => '#',
+                    ],
+                    'linkedin' => [
+                        'url' => '#',
+                    ]
+                ]
+            ]) ?>
         </section>
 
         <h1 class="text-center">
