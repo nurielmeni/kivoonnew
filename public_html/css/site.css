@@ -91,24 +91,6 @@ div.header-content {
   z-index: 3;
 }
 
-/************   SOCIAL SHARE   ***********/
-
-ul.social-share {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
-ul.social-share li {
-  list-style: none;
-  margin: 0 0.5rem;
-}
-
-ul.social-share li a {
-  text-decoration: none;
-}
-
 /************     DIVIDER      ***********/
 .arroe-divider {
   height: 4px;
@@ -126,6 +108,7 @@ ul.social-share li a {
   border-top: 1rem solid;
   left: calc(50% - 1rem);
 }
+
 /************      HEADER      ***********/
 section.social-share-header {
   padding: 1.75rem 0 2rem;
@@ -144,9 +127,12 @@ section.social-share-header i.si:focus {
   color: #5378ae;
   font-size: 1.5rem;
 }
-/************      FOOTER      ***********/
 
-/************ END SOCIAL SHARE ***********/
+/**********   FORM INPUTS   ***********/
+form .form-group input.form-control {
+}
+
+/*********  END FORM INPUTS   *********/
 
 /************      FOOTER      ***********/
 footer {

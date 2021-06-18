@@ -2,7 +2,6 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\iconTextArea\IconTextAreaWidget;
 
@@ -40,7 +39,7 @@ $this->title = Yii::$app->name;
   'name' => 'contact',
   'image' => Url::to('@web/images/icons/headphones.svg', true),
   'title' => 'צרו קשר',
-  'content' => '<p></p>'
+  'content' => $this->render('_contactForm', ['contact' => $contact])
 ]) ?>
 
 <?= $this->render('_footer') ?>

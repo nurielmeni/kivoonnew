@@ -2,7 +2,7 @@
 
 return [
     'flushCache' => false,
-    'adminEmail' => 'meni-nuriel@hotmail.com',
+    'bccMail' => 'nurielmeni@gmail.com',
     'datePickerKvOptions' => [
         'type' => 1,
         'readonly' => true,
@@ -13,14 +13,20 @@ return [
             'todayHighlight' => true,
         ]
     ],
-    'sellStatus' => false, //Ikea - 3,
-    'supplierIdFbf' => 'e48f8706-d313-4e60-bce4-5fcbb45e3514',
     'supplierId' => 'e48f8706-d313-4e60-bce4-5fcbb45e3514',
-    'cvWebMail' => 'elbitsystems@cvwebmail.com',
-    'cvWebMailName' => 'Elbit Campaign Site',
-    'maxNumberOfJobs' => 10,
-    'facebook' => 'https://www.facebook.com/Elbitsystems',
-    'linkedin' => 'https://il.linkedin.com/company/elbit-systems-ltd',
-    'elbitSite' => 'https://elbitsystems.com/',
-    'recruitersMail' => 'Recruitment@elbitsystems.com',
+    'cvWebMail' => 'kivoon@cvwebmail.com',
+    'cvWebMailName' => 'Kivoon Jobs Site',
+    'social' => [
+        'facebook' => 'https://www.facebook.com/kivoon',
+        'linkedin' => 'https://il.linkedin.com/company/kivoon',
+        'whatsapp' => '#_',
+    ],
+    'contact' => [
+        'fromMail' => 'jobs@kivoon.com',
+        'fromName' => 'אתר משרות - כיוון',
+    ],
+    'apply' => [
+        'fromMail' => 'jobs@kivoon.com',
+        'fromName' => 'אתר משרות - כיוון',
+    ]
 ];

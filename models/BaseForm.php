@@ -22,7 +22,7 @@ class BaseForm extends Model
     public function rules()
     {
         return [
-            // name, email, subject and body are required
+            //name, email, subject and body are required
             [['firstname', 'lastname', 'email'], 'required'],
             [['firstname', 'lastname'], 'filter', 'filter' => 'trim', 'skipOnArray' => true]
         ];

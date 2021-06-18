@@ -102,7 +102,10 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
-        return $this->render('index', []);
+        $contact = new ContactForm();
+        return $this->render('index', [
+            'contact' => $contact
+        ]);
     }
 
     public function actionApply()
