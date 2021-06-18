@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
 
     <div class="col">
         <?= $form->field($contact, 'content')
-            ->textInput(['placeholder' => $contact->getAttributeLabel('email')])
+            ->textArea(['placeholder' => $contact->getAttributeLabel('email')])
             ->label(false) ?>
     </div>
 </div>

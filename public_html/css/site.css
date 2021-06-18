@@ -129,9 +129,27 @@ section.social-share-header i.si:focus {
 }
 
 /**********   FORM INPUTS   ***********/
-form .form-group input.form-control {
+form .form-group {
+  padding: 1rem;
+  height: 100%;
 }
 
+form .form-group textarea.form-control {
+  height: 100%;
+}
+
+form .form-group .form-control {
+  border: none;
+  height: 3.5rem;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+}
+
+form .help-block {
+  font-size: 1.5rem;
+  text-align: right;
+  color: #992e2e;
+}
 /*********  END FORM INPUTS   *********/
 
 /************      FOOTER      ***********/
