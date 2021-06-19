@@ -1,4 +1,16 @@
 /** RESPONSIVE CSS **/
+
+@media all and (max-width: 800px) {
+  form div.row {
+    flex-direction: column !important;
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+  }
+}
+
 @media all and (max-width: 767.9px) {
   #search-form {
     flex-direction: column;

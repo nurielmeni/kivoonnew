@@ -32,7 +32,7 @@ $this->title = Yii::$app->name;
   'name' => 'apply',
   'image' => Url::to('@web/images/icons/curriculum-vitae.svg', true),
   'title' => 'שליחת קו״ח',
-  'content' => '<p></p>'
+  'content' => $this->render('_applyForm', ['apply' => $apply])
 ]) ?>
 
 <?= IconTextAreaWidget::widget([

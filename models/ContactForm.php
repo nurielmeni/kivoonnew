@@ -19,11 +19,27 @@ class ContactForm extends BaseForm
      */
     public function rules()
     {
-        return
+        return ArrayHelper::merge(
+            parent::rules(),
             [
-                [['firstname', 'lastname', 'email'], 'required'],
-            ];
+                [['content'], 'required']
+            ]
+        );
     }
+
+    /**
+     * @return array customized attribute labels
+     */
+    public function attributeLabels()
+    {
+        return ArrayHelper::merge(
+            parent::attributeLabels(),
+            [
+                'content' => Yii::t('app', 'Content')
+            ]
+        );
+    }
+
 
     /**
      * Sends an contact email.

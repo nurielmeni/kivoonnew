@@ -7,11 +7,9 @@ use yii\widgets\ActiveForm;
     'id' => 'kivoon-contact',
 ]); ?>
 
-<div class="flex space-between">
-    <div class="flex flex-column space-between">
-        <?= $form->field($contact, 'firstname', [
-            'template' => '{input}{label}{error}',
-        ])
+<div class="flex center row">
+    <div class="flex flex-column space-between col">
+        <?= $form->field($contact, 'firstname')
             ->textInput(['placeholder' => $contact->getAttributeLabel('firstname')])
             ->label(false) ?>
 
@@ -24,15 +22,15 @@ use yii\widgets\ActiveForm;
             ->label(false) ?>
     </div>
 
-    <div class="col">
+    <div class="flex flex-column space-between col">
         <?= $form->field($contact, 'content')
-            ->textArea(['placeholder' => $contact->getAttributeLabel('email')])
+            ->textArea(['placeholder' => $contact->getAttributeLabel('content')])
             ->label(false) ?>
     </div>
 </div>
 
 <div class="flex center">
-    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+    <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'bg-blue fg-white']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>

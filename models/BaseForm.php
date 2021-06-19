@@ -24,6 +24,7 @@ class BaseForm extends Model
         return [
             //name, email, subject and body are required
             [['firstname', 'lastname', 'email'], 'required'],
+            [['email'], 'email'],
             [['firstname', 'lastname'], 'filter', 'filter' => 'trim', 'skipOnArray' => true]
         ];
     }

@@ -8,6 +8,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\ApplyForm;
 use app\models\Search;
 use yii\web\UploadedFile;
 use app\controllers\BaseController;
@@ -102,9 +103,12 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        $apply = new ApplyForm();
         $contact = new ContactForm();
+
         return $this->render('index', [
-            'contact' => $contact
+            'apply' => $apply,
+            'contact' => $contact,
         ]);
     }
 

@@ -11,7 +11,7 @@ use yii\helpers\ArrayHelper;
 /**
  * ContactForm is the model behind the contact form.
  */
-class ContactForm extends BaseForm
+class ApplyForm extends BaseForm
 {
     public $phone;
     public $jobTitle;
@@ -33,11 +33,11 @@ class ContactForm extends BaseForm
      */
     public function rules()
     {
-        ArrayHelper::merge(
+        return ArrayHelper::merge(
             parent::rules(),
             [
                 // name, email, subject and body are required
-                [['jobTitle', 'cvfile'], 'required'],
+                [['phone', 'cvfile'], 'required'],
                 ['supplierId', 'match', 'pattern' => '/^[a-zA-Z\d-]+$/i'],
                 ['phone', 'match', 'pattern' => '/^0[0-9]{1,2}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{4}/i'],
                 ['cvfile', 'file', 'extensions' => ['doc', 'docx', 'pdf', 'rtf'], 'checkExtensionByMimeType' => false],
@@ -57,7 +57,7 @@ class ContactForm extends BaseForm
                 'jobTitle' => Yii::t('app', 'Job Title'),
                 'jobCode' => Yii::t('app', 'Job Code'),
                 'searchArea' => Yii::t('app', 'Search Area'),
-                'cvfile' => Yii::t('app', 'Attach CV file'),
+                'cvfile' => Yii::t('app', 'Select File'),
                 'supplierId' => Yii::t('app', 'Supplier Id'),
                 'education' => Yii::t('app', 'Education'),
                 'experiance' => Yii::t('app', 'Experiance'),
