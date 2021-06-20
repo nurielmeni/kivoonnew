@@ -105,10 +105,13 @@ class SiteController extends BaseController
     {
         $apply = new ApplyForm();
         $contact = new ContactForm();
+        $search = new Search(Yii::$app->params['supplierId']);
 
         return $this->render('index', [
             'apply' => $apply,
             'contact' => $contact,
+            'categories' => $search->categories,
+            'locations' => $search->locations
         ]);
     }
 

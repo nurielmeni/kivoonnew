@@ -9,7 +9,7 @@ $this->title = Yii::$app->name;
 
 ?>
 
-<?= $this->render('_header') ?>
+<?= $this->render('_header', ['categories' => $categories, 'locations' => $locations]) ?>
 
 
 <div class="arroe-divider bg-blue w-100 xs-up"></div>

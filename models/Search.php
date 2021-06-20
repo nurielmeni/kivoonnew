@@ -13,16 +13,18 @@ use stdClass;
 /**
  * ContactForm is the model behind the contact form.
  */
-class Search extends Model {
+class Search extends Model
+{
 
     const LANG_HEB = '1037';
     const LANG_ENG = '1033';
-    
+
     private $niloos;
     private $supplierId;
     private $sellStatus;
-    
-    public function __construct($supplierId = null) {
+
+    public function __construct($supplierId = null)
+    {
         parent::__construct();
         if ($supplierId === null) {
             \Yii::error('No supplier id provided for search ', 'Niloos Search');
@@ -31,12 +33,23 @@ class Search extends Model {
 
         $this->niloos = new Niloos();
         $this->supplierId = $supplierId;
-        $sellStatus = key_exists('sellStatus', Yii::$app->params) 
+        $sellStatus = key_exists('sellStatus', Yii::$app->params)
             ? Yii::$app->params['sellStatus']
             : null;
     }
-    
-    public function suppliersGetByFilter2() {
+
+    public function getCategories()
+    {
+        return ArrayHelper::map($this->niloos->categories(), 'id', 'text');
+    }
+
+    public function getLocations()
+    {
+        return ArrayHelper::map($this->niloos->getListByName('Region'), 'id', 'text');
+    }
+
+    public function suppliersGetByFilter2()
+    {
         /**
          * 
          * 
@@ -68,7 +81,7 @@ class Search extends Model {
          * 
          *   
          * */
-        
+
         $filter = [
             'FromView' => 'Suppliers',
             'SelectFilterFields' => [
@@ -94,18 +107,19 @@ class Search extends Model {
                 $this->addWhereFilter('AND', 'SellsStatus', 'Exact', $this->sellStatus),
             ];
         }
-         
+
 
 
         return $this->niloos->suppliersGetByFilter2($filter);
     }
-    
+
     /**
      * This function will add a where filter to the $obj
      * @author Meni Nuriel
      * @version 1.0 this version tag is parsed
      */
-    private function addWhereFilter($condition, $field, $searchPhrase, $values) {
+    private function addWhereFilter($condition, $field, $searchPhrase, $values)
+    {
         $JobFilterFields = [];
         is_array($values) ?: $values = [$values];
 
@@ -117,22 +131,23 @@ class Search extends Model {
             ];
             $JobFilterFields[] = $JobFilterField;
         }
-        
+
         // Then: build the FilterWhere
         $JobFilterWhere = [
             'Filters' => $JobFilterFields,
             'Condition' => $condition
         ];
-        
+
         // Last: add the FilterWhere object above to WhereFilters array of your filter
         return $JobFilterWhere;
     }
 
-    
-    public function jobsByCategories($categories = []) {
-    /**
-     * Object type of search
-     *
+
+    public function jobsByCategories($categories = [])
+    {
+        /**
+         * Object type of search
+         *
         $filter = new stdClass();
         $filter->jobFilter = new stdClass();
         $filter->jobFilter->FromView = "Jobs";
@@ -153,10 +168,10 @@ class Search extends Model {
 
         $filter->transactionCode = Helper::newGuid();
         $filter->LanguageId = self::LANG_HEB;
-     * 
-     * End of object
-    **/
-            
+         * 
+         * End of object
+         **/
+
         $filter = [
             'transactionCode' => Helper::newGuid(),
             'LanguageId' => self::LANG_HEB,
@@ -166,29 +181,29 @@ class Search extends Model {
                 'OffsetIndex' => 0,
                 'SelectFilterFields' => [
                     'JobFilterFields' => [
-//                        'CityId', 
-//                        'CountryCodeFIPS', 
-                        'Description', 
-                        'JobId', 
-//                        'JobSeniority', 
-                        'JobTitle', 
+                        //                        'CityId', 
+                        //                        'CountryCodeFIPS', 
+                        'Description',
+                        'JobId',
+                        //                        'JobSeniority', 
+                        'JobTitle',
                         'JobCode',
-//                        'OpenDate',
-//                        'CategoryId',
-//                        'OpenPositions', 
-//                        'Rank', 
-//                        'RegionValue', 
-//                        'Requiremets', 
-//                        'Skills', 
-//                        'YearsOfExperience',
-//                        'EmployerName',
-//                        'JobScope',
-//                        'EmployerId',
+                        //                        'OpenDate',
+                        //                        'CategoryId',
+                        //                        'OpenPositions', 
+                        //                        'Rank', 
+                        //                        'RegionValue', 
+                        //                        'Requiremets', 
+                        //                        'Skills', 
+                        //                        'YearsOfExperience',
+                        //                        'EmployerName',
+                        //                        'JobScope',
+                        //                        'EmployerId',
                         'RegionText',
-//                        'EmploymentType',
+                        //                        'EmploymentType',
                         'UpdateDate',
-//                        'ExpertiseId',
-//                        'ProfessionalFieldId'
+                        //                        'ExpertiseId',
+                        //                        'ProfessionalFieldId'
                     ],
                 ],
                 'OrderByFilterSort' => [
@@ -207,18 +222,20 @@ class Search extends Model {
                 ],
             ]
         ];
-//                        print '<pre style="direction:ltr;"><code>';
-//                        print_r($filter);
-//                        print '</code></pre>';
+        //                        print '<pre style="direction:ltr;"><code>';
+        //                        print_r($filter);
+        //                        print '</code></pre>';
         $cacheKey = $this->supplierId . implode('', $categories);
         return $this->niloos->jobsGetByFilter($filter, $cacheKey);
     }
-    
-    public function getJobById($id) {
-        return $this->niloos->jobGetConsideringIsDiscreetFiled($id); 
+
+    public function getJobById($id)
+    {
+        return $this->niloos->jobGetConsideringIsDiscreetFiled($id);
     }
 
-    public function jobs($full = false) {
+    public function jobs($full = false)
+    {
         $filter = [
             'transactionCode' => Helper::newGuid(),
             'LanguageId' => self::LANG_HEB,
@@ -228,29 +245,29 @@ class Search extends Model {
                 'OffsetIndex' => 0,
                 'SelectFilterFields' => [
                     'JobFilterFields' => [
-//                        'CityId', 
-//                        'CountryCodeFIPS', 
-                        'Description', 
-                        'JobId', 
-//                        'JobSeniority', 
-                        'JobTitle', 
+                        //                        'CityId', 
+                        //                        'CountryCodeFIPS', 
+                        'Description',
+                        'JobId',
+                        //                        'JobSeniority', 
+                        'JobTitle',
                         'JobCode',
-//                        'OpenDate',
-//                        'CategoryId',
-//                        'OpenPositions', 
-//                        'Rank', 
-                        'RegionValue', 
-                        'Requiremets', 
-//                        'Skills', 
-//                        'YearsOfExperience',
-//                        'EmployerName',
-//                        'JobScope',
-//                        'EmployerId',
+                        //                        'OpenDate',
+                        //                        'CategoryId',
+                        //                        'OpenPositions', 
+                        //                        'Rank', 
+                        'RegionValue',
+                        'Requiremets',
+                        //                        'Skills', 
+                        //                        'YearsOfExperience',
+                        //                        'EmployerName',
+                        //                        'JobScope',
+                        //                        'EmployerId',
                         'RegionText',
-//                        'EmploymentType',
+                        //                        'EmploymentType',
                         'UpdateDate',
-//                        'ExpertiseId',
-//                        'ProfessionalFieldId'
+                        //                        'ExpertiseId',
+                        //                        'ProfessionalFieldId'
                     ],
                 ],
                 'OrderByFilterSort' => [
@@ -269,21 +286,21 @@ class Search extends Model {
                 ],
             ]
         ];
-                    //    print '<pre style="direction:ltr;"><code>';
-                    //    print_r($filter);
-                    //    print '</code></pre>';
+        //    print '<pre style="direction:ltr;"><code>';
+        //    print_r($filter);
+        //    print '</code></pre>';
         $cacheKey = $this->supplierId;
         $jobs = $this->niloos->jobsGetByFilter($filter, $cacheKey);
         $cities = $this->niloos->getListByName('Cities');
-        
-        if  ($full && is_array($jobs)) {
-            foreach($jobs as &$job) {
-                key_exists('JobId', $job)
-                    ? $job['JobDetails'] = $this->niloos->jobGetConsideringIsDiscreetFiled($job['JobId'])               
-                    : $job['JobDetails'] = [];  
 
-                if(property_exists($job['JobDetails'], 'ExtendedProperties')) {
-                    $exProps = is_array($job['JobDetails']->ExtendedProperties) 
+        if ($full && is_array($jobs)) {
+            foreach ($jobs as &$job) {
+                key_exists('JobId', $job)
+                    ? $job['JobDetails'] = $this->niloos->jobGetConsideringIsDiscreetFiled($job['JobId'])
+                    : $job['JobDetails'] = [];
+
+                if (property_exists($job['JobDetails'], 'ExtendedProperties')) {
+                    $exProps = is_array($job['JobDetails']->ExtendedProperties)
                         ? $job['JobDetails']['ExtendedProperties']
                         : [$job['JobDetails']->ExtendedProperties];
                     $cityId = Helper::getExtendedProperty($exProps, 'Cities');

@@ -11,7 +11,7 @@ and open the template in the editor.
 div.search-form {
   max-width: 1000px;
   margin: 0 auto;
-  font-size: 2rem;
+  font-size: 1.75rem;
   padding: 0 1rem;
 }
 
@@ -27,6 +27,10 @@ div.search-form > form > div.SumoSelect {
 
 div.search-form > form > div.btn > button {
   width: 150px;
+}
+
+div.search-form .SumoSelect > .CaptionCont > * {
+  cursor: pointer;
 }
 
 div.search-form .SumoSelect > .CaptionCont,

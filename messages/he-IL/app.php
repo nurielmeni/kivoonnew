@@ -13,5 +13,8 @@ return [
     'Supplier Id' => 'קוד ספק',
     'Education' => 'השכלה',
     'Experiance' => 'נסיון',
-    'Apply' => 'הגש מועמדות'
+    'Apply' => 'הגש מועמדות',
+    'Category' => 'תחום',
+    'Location' => 'מיקום',
+    'Search' => 'חפש',
 ];

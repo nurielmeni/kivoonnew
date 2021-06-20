@@ -8,12 +8,19 @@ use app\widgets\searchForm\assets\SearchFormAsset;
 
 class SearchFormWidget extends Widget
 {
-
+    const SELECT = 'select';
+    const TEXT = 'text';
+    const SUBMIT = 'submit';
 
     public $name = 'search-form';
     public $cssClass = '';
     public $resultsWrapperElementId = 'search-results';
     public $applyUrl;
+    /**
+     * type: [select, text, submit]
+     * content: [options: [multiple: Bool, options: Array, name: String, placeholder: String], name: String, name: String]
+     */
+    public $serachFields = [];
 
     public function init()
     {
@@ -21,7 +28,7 @@ class SearchFormWidget extends Widget
         SearchFormAsset::register(\Yii::$app->view);
 
         if (empty($this->applyUrl)) {
-            $this->applyUrl = Url::to('site/apply');
+            $this->applyUrl = Url::to('site/serach');
         }
     }
 
@@ -32,6 +39,7 @@ class SearchFormWidget extends Widget
             'cssClass' => $this->cssClass,
             'resultsWrapperElementId' => $this->resultsWrapperElementId,
             'applyUrl' => $this->applyUrl,
+            'serachFields' => $this->serachFields,
         ]);
     }
 }

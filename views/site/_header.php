@@ -35,7 +35,28 @@ $navItems = require __DIR__ . '/_navItems.php';
             בואו למצוא קריירה!
         </h1>
 
-        <?= SearchFormWidget::widget() ?>
+        <?= SearchFormWidget::widget([
+            'serachFields' => [
+                [
+                    'name' => 'select-category',
+                    'type' => SearchFormWidget::SELECT,
+                    'multiple' => true,
+                    'options' => $categories,
+                    'placeholder' => Yii::t('app', 'Category')
+                ],
+                [
+                    'name' => 'select-location',
+                    'type' => SearchFormWidget::SELECT,
+                    'multiple' => true,
+                    'options' => $locations,
+                    'placeholder' => Yii::t('app', 'Location')
+                ],
+                [
+                    'name' => Yii::t('app', 'Search'),
+                    'type' => SearchFormWidget::SUBMIT,
+                ]
+            ],
+        ]) ?>
 
         <?= NavWidget::widget(['items' => $navItems, 'cssClass' => 'xs-up']) ?>
 

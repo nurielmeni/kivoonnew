@@ -213,7 +213,7 @@ class Niloos
     {
         $languageCode = $this->languageCode;
 
-        $res = \Yii::$app->cache->getOrSet('categories', function () use ($name, $languageCode) {
+        $res = \Yii::$app->cache->getOrSet($name, function () use ($name, $languageCode) {
             $this->setClient('directory');
             $list = [];
 
