@@ -12,6 +12,29 @@
 }
 
 @media all and (max-width: 767.9px) {
+  form .form-group .form-control {
+    font-size: 1.2rem;
+  }
+
+  form .help-block {
+    font-size: 1rem;
+  }
+
+  form button[type="submit"] {
+    height: 2.75rem;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  form .form-group .form-control {
+    height: 2.75rem;
+  }
+
+  label[for="applyform-cvfile"] {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.75rem;
+  }
+
   #search-form {
     flex-direction: column;
   }

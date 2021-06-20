@@ -16,14 +16,14 @@ div.icon-text-area {
 }
 
 div.icon-text-area > h3 {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: normal;
   margin-top: 1rem;
   margin-bottom: 0;
 }
 
 div.icon-text-area > div.content-wrapper {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: normal;
   width: 100%;
   padding: 0 1rem;
@@ -44,6 +44,10 @@ div.icon-text-area .bg-bordered-circle:after {
 }
 
 @media all and (max-width: 679.9px) {
+  div.icon-text-area > div.content-wrapper {
+    font-size: 1rem;
+  }
+
   div.icon-text-area .bg-bordered-circle > img {
     width: 30px;
   }

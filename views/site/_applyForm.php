@@ -34,7 +34,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($apply, 'cvfile')->fileInput(['style' => 'display: none;']) ?>
     <div class="selected-file-name cvfile fg-blue" style="display: none;"></div>
 </div>
-<div class="flex center">
+<div class="flex center form-group">
     <?= Html::submitButton(Yii::t('app', 'Apply'), ['class' => 'bg-blue fg-white']) ?>
 </div>
 

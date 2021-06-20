@@ -29,7 +29,7 @@ use yii\widgets\ActiveForm;
     </div>
 </div>
 
-<div class="flex center">
+<div class="flex center form-group">
     <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'bg-blue fg-white']) ?>
 </div>
 
