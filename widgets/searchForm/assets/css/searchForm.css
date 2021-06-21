@@ -60,8 +60,14 @@ div.search-form .SumoSelect .select-all {
 #search-results {
   min-height: calc(100vh - 635px);
   margin: 0 auto;
-  z-index: 100;
+  z-index: 20;
   position: relative;
+}
+
+#apply-response {
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 
 /****** RESPONSIVE DESIGN ********/

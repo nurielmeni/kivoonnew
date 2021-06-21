@@ -117,8 +117,21 @@ class SiteController extends BaseController
 
     public function actionSearch()
     {
+        $request = Yii::$app->request;
+        $response = Yii::$app->response;
+
+        $categories = explode(',', $request->post('categories', ""));
+        $regions = explode(',', $request->post('regions', ""));
+
         $model = new Search();
-        $jobs = $model->jobs();
+        $jobs = $model->jobs($categories, $regions);
+
+        if (is_array($jobs) && count($jobs) > 0) {
+            return $this->renderAjax('searchResults', ['jobs' => $jobs]);
+        } else {
+            return $this->renderAjax('noResults');
+        }
+        Yii::$app->end();
     }
 
     public function actionApply()

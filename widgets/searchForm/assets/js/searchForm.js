@@ -15,7 +15,9 @@ var SearchForm = (function ($) {
     $(formWrapperSelector + ' button[type="submit"]').on("click", function (e) {
       e.preventDefault();
 
-      var formData = new FormData($(formWrapperSelector + " form")[0]);
+      var formData = new FormData();
+      formData.append("categories", $("#select-category").val());
+      formData.append("regions", $("#select-location").val());
       searchJobs(formData);
     });
   }
@@ -27,10 +29,9 @@ var SearchForm = (function ($) {
       contentType: false,
       cache: false,
       processData: false,
-      dataType: "json",
+      dataType: "html",
       beforeSend: function () {
         $(".home-element").hide();
-        //$(formWrapperSelector).append($(resultsWrapperSelector));
         $(resultsWrapperSelector).show();
         $(resultsWrapperSelector).html(
           '<div id="apply-response" class="shadowed-box rounded"><div id="nls-loader" class="loader">אנא המתן...</div></div>'
@@ -41,9 +42,7 @@ var SearchForm = (function ($) {
         });
       },
       success: function (response) {
-        $("#nls-loader").remove();
-        console.log("Status: ", response.status);
-        $(resultsWrapperSelector).html(response.html);
+        $(resultsWrapperSelector).html(response);
       },
       error: function (response) {
         console.log(response);

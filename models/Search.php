@@ -239,7 +239,7 @@ class Search extends Model
                 'OffsetIndex' => 0,
                 'SelectFilterFields' => [
                     'JobFilterFields' => [
-                        //                        'CityId', 
+                        'CityId',
                         //                        'CountryCodeFIPS', 
                         'Description',
                         'JobId',
@@ -249,13 +249,13 @@ class Search extends Model
                         //                        'OpenDate',
                         //                        'CategoryId',
                         //                        'OpenPositions', 
-                        //                        'Rank', 
+                        'Rank',
                         'RegionValue',
                         'Requiremets',
                         //                        'Skills', 
                         //                        'YearsOfExperience',
                         //                        'EmployerName',
-                        //                        'JobScope',
+                        'JobScope',
                         //                        'EmployerId',
                         'RegionText',
                         //                        'EmploymentType',
@@ -284,7 +284,7 @@ class Search extends Model
         //    print '<pre style="direction:ltr;"><code>';
         //    print_r($filter);
         //    print '</code></pre>';
-        $cacheKey = $this->supplierId;
+        $cacheKey = 'jobsearch' . implode($categories) . implode($regions);
         $jobs = $this->niloos->jobsGetByFilter($filter, $cacheKey);
 
         if ($full && is_array($jobs)) {

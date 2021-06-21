@@ -65,4 +65,7 @@ $navItems = require __DIR__ . '/_navItems.php';
         </div>
 
     </div>
+
+    <div id="search-results" class="bg-gray" style="display: none;"></div>
+
 </header>
