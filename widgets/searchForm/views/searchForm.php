@@ -33,6 +33,8 @@ $js = <<<JS
 
     SearchForm.init({
         name: '$name',
+        resultsWrapperElementId: '$resultsWrapperElementId',
+        applyUrl: '$applyUrl',
     });
 JS;
 

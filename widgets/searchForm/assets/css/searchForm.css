@@ -57,6 +57,13 @@ div.search-form .SumoSelect .select-all {
   font-weight: lighter;
 }
 
+#search-results {
+  min-height: calc(100vh - 635px);
+  margin: 0 auto;
+  z-index: 100;
+  position: relative;
+}
+
 /****** RESPONSIVE DESIGN ********/
 @media all and (max-width: 999.9px) {
 }

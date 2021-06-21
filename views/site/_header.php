@@ -58,9 +58,11 @@ $navItems = require __DIR__ . '/_navItems.php';
             ],
         ]) ?>
 
-        <?= NavWidget::widget(['items' => $navItems, 'cssClass' => 'xs-up']) ?>
+        <?= NavWidget::widget(['items' => $navItems, 'cssClass' => 'xs-up home-element']) ?>
 
-        <?= $this->render('_headerSocial') ?>
+        <div class="home-element">
+            <?= $this->render('_headerSocial') ?>
+        </div>
 
     </div>
 </header>

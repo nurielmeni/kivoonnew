@@ -23,23 +23,23 @@ class SiteController extends BaseController
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
+            // 'access' => [
+            //     'class' => AccessControl::className(),
+            //     'only' => ['logout'],
+            //     'rules' => [
+            //         [
+            //             'actions' => ['logout'],
+            //             'allow' => true,
+            //             'roles' => ['@'],
+            //         ],
+            //     ],
+            // ],
+            // 'verbs' => [
+            //     'class' => VerbFilter::className(),
+            //     'actions' => [
+            //         'logout' => ['post'],
+            //     ],
+            // ],
         ];
     }
 
@@ -115,6 +115,12 @@ class SiteController extends BaseController
         ]);
     }
 
+    public function actionSearch()
+    {
+        $model = new Search();
+        $jobs = $model->jobs();
+    }
+
     public function actionApply()
     {
         $request = Yii::$app->request;
@@ -133,7 +139,7 @@ class SiteController extends BaseController
         $campaign = $this->validCampaign($campaignid);
 
         $model = new ContactForm();
-        $model->supplierId = Yii::$app->request->get('sid', (empty($campaign->sid) ? Yii::$app->params['supplierId'] : $campaign->sid));
+        $model->supplierId = Yii::$app->request->get('sid', Yii::$app->params['supplierId']);
 
         $count = 0;
         if ($model->load(Yii::$app->request->post(), '')) {

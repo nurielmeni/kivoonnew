@@ -29,11 +29,11 @@ and open the template in the editor.
   color: #5378ae;
 }
 
-.bg-dark-gray {
-  background-color: #7b7b7b;
+.bg-gray {
+  background-color: #efefef;
 }
-.fg-dark-gray {
-  color: #7b7b7b;
+.fg-gray {
+  color: #efefef;
 }
 
 .bg-light-bleu {

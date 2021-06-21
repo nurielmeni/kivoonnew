@@ -25,14 +25,8 @@ class Search extends Model
 
     public function __construct($supplierId = null)
     {
-        parent::__construct();
-        if ($supplierId === null) {
-            \Yii::error('No supplier id provided for search ', 'Niloos Search');
-            die;
-        }
-
         $this->niloos = new Niloos();
-        $this->supplierId = $supplierId;
+        $this->supplierId = $supplierId === null ? Yii::$app->request->get('sid', Yii::$app->params['supplierId']) : $supplierId;
         $sellStatus = key_exists('sellStatus', Yii::$app->params)
             ? Yii::$app->params['sellStatus']
             : null;
@@ -45,7 +39,7 @@ class Search extends Model
 
     public function getLocations()
     {
-        return ArrayHelper::map($this->niloos->getListByName('Region'), 'id', 'text');
+        return $this->niloos->getListByName('Regions');
     }
 
     public function suppliersGetByFilter2()
@@ -143,7 +137,7 @@ class Search extends Model
     }
 
 
-    public function jobsByCategories($categories = [])
+    public function jobsByCategories($categories, $regions)
     {
         /**
          * Object type of search
@@ -234,7 +228,7 @@ class Search extends Model
         return $this->niloos->jobGetConsideringIsDiscreetFiled($id);
     }
 
-    public function jobs($full = false)
+    public function jobs($categories = [], $regions = [], $full = false)
     {
         $filter = [
             'transactionCode' => Helper::newGuid(),
@@ -280,7 +274,8 @@ class Search extends Model
                 ],
                 'WhereFilters' => [
                     'JobFilterWhere' => [
-                        //$this->addWhereFilter('OR', 'CategoryId', 'Exact', $categories),
+                        $this->addWhereFilter('OR', 'RegionValue', 'Exact', $regions),
+                        $this->addWhereFilter('OR', 'CategoryId', 'Exact', $categories),
                         $this->addWhereFilter('AND', 'SupplierId', 'Exact', $this->supplierId),
                     ],
                 ],
@@ -291,9 +286,9 @@ class Search extends Model
         //    print '</code></pre>';
         $cacheKey = $this->supplierId;
         $jobs = $this->niloos->jobsGetByFilter($filter, $cacheKey);
-        $cities = $this->niloos->getListByName('Cities');
 
         if ($full && is_array($jobs)) {
+            $cities = $this->niloos->getListByName('Cities');
             foreach ($jobs as &$job) {
                 key_exists('JobId', $job)
                     ? $job['JobDetails'] = $this->niloos->jobGetConsideringIsDiscreetFiled($job['JobId'])

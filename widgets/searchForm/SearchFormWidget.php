@@ -28,7 +28,7 @@ class SearchFormWidget extends Widget
         SearchFormAsset::register(\Yii::$app->view);
 
         if (empty($this->applyUrl)) {
-            $this->applyUrl = Url::to('site/serach');
+            $this->applyUrl = Url::to('site/search');
         }
     }
 
