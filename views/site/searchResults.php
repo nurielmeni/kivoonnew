@@ -7,10 +7,12 @@
 use app\helpers\Helper;
 
 ?>
-
-<div>
+<div class="container ">
+    <p class=" leggend"><?= Yii::t('app', 'The search completed. {0,number} jobs were found.', count($jobs)) ?></p>
+</div>
+<div class="container">
     <?php foreach ($jobs as $job) : ?>
-        <div class="job-wrappwe flex space-between align-center" data-job-code="<?= Helper::getArrValue($job, 'JobCode') ?>">
+        <div class="job-wrapper flex space-between align-center bg-white" data-job-code="<?= Helper::getArrValue($job, 'JobCode') ?>">
             <div class="job-info flex flex-column space-between">
                 <h2><? Helper::getArrValue($job, 'JobTitle') ?></h2>
                 <p><?= date('d-m-Y', strtotime(Helper::getArrValue($job, 'UpdateDate'))) ?></p>
@@ -21,7 +23,7 @@ use app\helpers\Helper;
                     <?= Helper::getArrValue($job, 'RegionText') ?>
                 </p>
             </div>
-            <button class="bg-blue fg-white" data-job-code="<? Helper::getArrValue($job, 'JobCode') ?>">
+            <button class="apply bg-blue fg-white" data-job-code="<? Helper::getArrValue($job, 'JobCode') ?>">
                 <?= Yii::t('app', 'Apply') ?>
             </button>
         </div>

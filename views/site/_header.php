@@ -9,7 +9,7 @@ $navItems = require __DIR__ . '/_navItems.php';
 ?>
 
 <header>
-    <video id="video-background" poster="poster.jpg" autoplay muted loop>
+    <video id="video-background" class="home-element" poster="poster.jpg" autoplay muted loop>
         <source src="<?= Url::to('@web/videos/bgvideo.mp4') ?>" type="video/mp4">
     </video>
 

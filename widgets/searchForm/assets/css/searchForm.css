@@ -8,11 +8,21 @@ and open the template in the editor.
     Author     : Nurielmeni
 */
 
-div.search-form {
+div.search-form,
+#search-results > div.container {
   max-width: 1000px;
   margin: 0 auto;
   font-size: 1.75rem;
   padding: 0 1rem;
+}
+
+#search-results > div.container .job-wrapper {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+#search-results > div.container {
+  padding: 2rem 0 !important;
 }
 
 div.search-form > form > div {

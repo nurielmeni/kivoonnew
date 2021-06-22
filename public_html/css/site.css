@@ -155,7 +155,8 @@ form .help-block {
   color: #992e2e;
 }
 
-button[type="submit"] {
+button[type="submit"],
+button.apply {
   border: none;
   margin: 2rem 0;
 }
