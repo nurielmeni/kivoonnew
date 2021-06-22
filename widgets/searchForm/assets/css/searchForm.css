@@ -16,13 +16,55 @@ div.search-form,
   padding: 0 1rem;
 }
 
+#search-results > div.container .job-wrapper p {
+  margin: 0.5rem;
+}
+
 #search-results > div.container .job-wrapper {
   padding: 1rem;
   margin-bottom: 2rem;
 }
+#search-results > div.container .job-wrapper h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
 
 #search-results > div.container {
-  padding: 2rem 0 !important;
+  padding: 2rem 0;
+}
+
+#search-results > div.container.leggend {
+  padding-bottom: 0;
+}
+
+#search-results > div.container.leggend > p {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+#search-results button.show-job-details {
+  position: relative;
+}
+
+#search-results button.show-job-details::after {
+  content: " ";
+  position: absolute;
+  left: -1em;
+  top: 0.25em;
+  background: url("/images/icons/angle-arrow-down.svg") no-repeat;
+  text-decoration: none;
+  height: 0.75em;
+  width: 0.75em;
+  background-size: 0.75em;
+  cursor: pointer;
+}
+
+#search-results button.show-job-details.up::after {
+  transform: rotate(180deg);
+}
+
+#search-results button.show-job-details > div.up {
+  transform: rotate(180deg);
 }
 
 div.search-form > form > div {

@@ -111,3 +111,15 @@ button.btn-clear {
 .border-none {
   border: none;
 }
+
+.margin-none {
+  margin: 0;
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.underline {
+  text-decoration: underline;
+}

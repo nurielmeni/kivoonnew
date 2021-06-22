@@ -36,11 +36,11 @@ and open the template in the editor.
   color: #efefef;
 }
 
-.bg-light-bleu {
-  background-color: #d1e1f0;
+.bg-green {
+  background-color: #6fad3d;
 }
-.fg-light-blue {
-  color: #d1e1f0;
+.fg-green {
+  color: #6fad3d;
 }
 
 .bg-green {
@@ -48,4 +48,11 @@ and open the template in the editor.
 }
 .fg-green {
   color: #6fad3d;
+}
+
+.fg-transparent {
+  color: transparent;
+}
+.bg-transparent {
+  background-color: transparent;
 }

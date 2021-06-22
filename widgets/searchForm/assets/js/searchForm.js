@@ -14,6 +14,7 @@ var SearchForm = (function ($) {
     $(window).on("popstate", function (event) {
       popStateHandler();
     });
+
     // SUBMIT CLICKED
     $(formWrapperSelector + ' button[type="submit"]').on("click", function (e) {
       e.preventDefault();
@@ -25,7 +26,15 @@ var SearchForm = (function ($) {
       searchJobs(formData);
     });
 
-    // URL Changed
+    //
+    $(document).on(
+      "click",
+      "#search-results button.show-job-details",
+      function () {
+        $(this).toggleClass("up");
+        $(this).parents(".job-wrapper").find(".job-details").toggle();
+      }
+    );
   }
 
   function initUrlHandler() {
