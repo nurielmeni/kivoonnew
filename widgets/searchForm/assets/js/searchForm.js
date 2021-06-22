@@ -9,10 +9,10 @@ var SearchForm = (function ($) {
     resultsWrapperSelector = "#" + options.resultsWrapperElementId;
     applyUrl = options.applyUrl;
 
-    searchHandler();
+    initUrlHandler();
     // EVENT LISTENERS
     $(window).on("popstate", function (event) {
-      searchHandler();
+      popStateHandler();
     });
     // SUBMIT CLICKED
     $(formWrapperSelector + ' button[type="submit"]').on("click", function (e) {
@@ -28,13 +28,32 @@ var SearchForm = (function ($) {
     // URL Changed
   }
 
-  function searchHandler() {
+  function initUrlHandler() {
     var searchParams = new URLSearchParams(window.location.search);
     if (
       window.location.pathname === "/" &&
       searchParams.get("search") === "1"
     ) {
+      history.replaceState({}, "", "");
       searchJobs(searchParams);
+    }
+  }
+
+  function popStateHandler() {
+    var searchParams = new URLSearchParams(window.location.search);
+    if (
+      window.location.pathname === "/" &&
+      searchParams.get("search") === "1"
+    ) {
+      history.replaceState({}, "", "");
+      $(".home-element").show();
+      $(resultsWrapperSelector).html("");
+    } else if (
+      window.location.pathname === "/" &&
+      searchParams.keys.length === 0
+    ) {
+      $(".home-element").show();
+      $(resultsWrapperSelector).html("");
     }
   }
 
@@ -48,12 +67,7 @@ var SearchForm = (function ($) {
       processData: false,
       dataType: "html",
       beforeSend: function () {
-        history.pushState({ fd: "" }, "");
-        history.replaceState(
-          { fd: searchParams },
-          "search",
-          "?" + searchParams
-        );
+        history.pushState({ fd: searchParams }, "search", "?" + searchParams);
         $(".home-element").hide();
         $(resultsWrapperSelector).show();
         $(resultsWrapperSelector).html(
