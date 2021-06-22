@@ -9,20 +9,37 @@ var SearchForm = (function ($) {
     resultsWrapperSelector = "#" + options.resultsWrapperElementId;
     applyUrl = options.applyUrl;
 
+    searchHandler();
     // EVENT LISTENERS
-
+    $(window).on("popstate", function (event) {
+      searchHandler();
+    });
     // SUBMIT CLICKED
     $(formWrapperSelector + ' button[type="submit"]').on("click", function (e) {
       e.preventDefault();
 
       var formData = new FormData();
+      formData.append("search", 1);
       formData.append("categories", $("#select-category").val());
       formData.append("regions", $("#select-location").val());
       searchJobs(formData);
     });
+
+    // URL Changed
+  }
+
+  function searchHandler() {
+    var searchParams = new URLSearchParams(window.location.search);
+    if (
+      window.location.pathname === "/" &&
+      searchParams.get("search") === "1"
+    ) {
+      searchJobs(searchParams);
+    }
   }
 
   function searchJobs(formData) {
+    var searchParams = new URLSearchParams(formData).toString();
     $.ajax({
       url: applyUrl,
       data: formData,
@@ -31,6 +48,12 @@ var SearchForm = (function ($) {
       processData: false,
       dataType: "html",
       beforeSend: function () {
+        history.pushState({ fd: "" }, "");
+        history.replaceState(
+          { fd: searchParams },
+          "search",
+          "?" + searchParams
+        );
         $(".home-element").hide();
         $(resultsWrapperSelector).show();
         $(resultsWrapperSelector).html(

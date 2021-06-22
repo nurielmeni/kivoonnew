@@ -118,6 +118,10 @@ class SiteController extends BaseController
     public function actionSearch()
     {
         $request = Yii::$app->request;
+        if (!$request->isAjax) {
+            $this->redirect('/',);
+        }
+
         $response = Yii::$app->response;
 
         $categories = explode(',', $request->post('categories', ""));
