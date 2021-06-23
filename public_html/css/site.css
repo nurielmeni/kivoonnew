@@ -160,6 +160,7 @@ button.apply {
   border: none;
   margin: 2rem 0;
   cursor: pointer;
+  height: 3rem;
 }
 
 label[for="applyform-cvfile"] {

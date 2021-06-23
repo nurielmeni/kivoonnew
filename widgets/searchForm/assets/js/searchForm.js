@@ -1,11 +1,19 @@
 var SearchForm = (function ($) {
+  var page = {
+    home: "home",
+    searchResults: "searchResults",
+    apply: "apply",
+  };
+
   var formWrapperSelector,
     resultsWrapperSelector,
     applyResultsWrapperSelector,
     applyUrl,
     searchUrl,
     jobCode,
-    jobId;
+    jobId,
+    searchParams,
+    currentPage = page.home;
   var loader = $('<div class="loader"></div>');
 
   function init(options) {
@@ -27,11 +35,12 @@ var SearchForm = (function ($) {
     $(formWrapperSelector + ' button[type="submit"]').on("click", function (e) {
       e.preventDefault();
 
-      var formData = new FormData();
-      formData.append("action", "search");
-      formData.append("categories", $("#select-category").val());
-      formData.append("regions", $("#select-location").val());
-      searchJobs(formData);
+      searchParams = new FormData();
+      searchParams.append("action", "search");
+      searchParams.append("categories", $("#select-category").val());
+      searchParams.append("regions", $("#select-location").val());
+
+      searchJobs();
     });
 
     // TOGGLE JOB DETAILS
@@ -59,10 +68,11 @@ var SearchForm = (function ($) {
     );
   }
 
-  function showSearchResults(searchParams) {
-    history.pushState({ fd: searchParams }, "search", "?" + searchParams);
+  function showSearchResults() {
+    setHistory(page.searchResults);
+
     $(".home-element").hide();
-    $(resultsWrapperSelector).show();
+    $(".search-results-element").show();
     $(resultsWrapperSelector).html(
       '<div id="apply-response" class="shadowed-box rounded"><div id="nls-loader" class="loader">אנא המתן...</div></div>'
     );
@@ -71,6 +81,8 @@ var SearchForm = (function ($) {
   }
 
   function showHomePage() {
+    setHistory(page.home);
+
     $(".home-element").show();
     $(resultsWrapperSelector).html("");
     $(applyResultsWrapperSelector).html("");
@@ -78,10 +90,12 @@ var SearchForm = (function ($) {
 
   function showApplyForm(job) {
     job.preventDefault();
+
     jobCode = $(job.target).data("job-code");
     jobId = $(job.target).data("job-id");
 
-    history.pushState({}, "apply", "apply");
+    setHistory(page.apply);
+
     $(".home-element").hide();
     $(".search-results-element").hide();
     $(".apply-element").show();
@@ -110,33 +124,56 @@ var SearchForm = (function ($) {
   }
 
   function initUrlHandler() {
-    var searchParams = new URLSearchParams(window.location.search);
+    searchParams = new URLSearchParams(window.location.search);
     if (
       window.location.pathname === "/" &&
       searchParams.get("action") === "search"
     ) {
-      history.replaceState({}, "", "");
-      searchJobs(searchParams);
+      searchJobs();
+    }
+  }
+
+  function setHistory(routeTo) {
+    var lastSearchParams = new URLSearchParams(searchParams);
+
+    switch (currentPage) {
+      case page.searchResults:
+        history.pushState({}, "search", "?" + lastSearchParams);
+        break;
+      case page.apply:
+        break;
+      default:
+        history.pushState({}, "Home", "");
+    }
+
+    switch (routeTo) {
+      case page.searchResults:
+        history.replaceState({}, "search", "?" + lastSearchParams);
+        break;
+      case page.apply:
+        var applyParams = new URLSearchParams();
+        applyParams.append("action", "apply");
+
+        history.replaceState({}, "Apply", "?" + applyParams);
+        break;
+      default:
+        history.replaceState({}, "Home", "");
     }
   }
 
   function popStateHandler() {
-    var searchParams = new URLSearchParams(window.location.search);
+    var sParams = new URLSearchParams(window.location.search);
     if (
       window.location.pathname === "/" &&
-      searchParams.get("action") === "search"
+      sParams.get("action") === "search"
     ) {
-      history.replaceState({}, "", "");
-      showHomePage();
+      searchJobs();
     } else if (
       window.location.pathname === "/" &&
-      searchParams.get("action") === "apply"
+      sParams.get("action") === "apply"
     ) {
       showApplyForm("");
-    } else if (
-      window.location.pathname === "/" &&
-      searchParams.keys.length === 0
-    ) {
+    } else if (window.location.pathname === "/" && sParams.keys.length === 0) {
       showHomePage();
     }
   }
@@ -147,8 +184,6 @@ var SearchForm = (function ($) {
     var formData = new FormData($("#apply form")[0]);
     formData.append("jobCode", jobCode);
     formData.append("jobId", jobId);
-
-    var searchParams = new URLSearchParams(formData).toString();
 
     $.ajax({
       url: applyUrl,
@@ -170,16 +205,15 @@ var SearchForm = (function ($) {
     });
   }
 
-  function searchJobs(formData) {
-    var searchParams = new URLSearchParams(formData).toString();
+  function searchJobs() {
     $.ajax({
       url: searchUrl,
-      data: formData,
+      data: searchParams,
       contentType: false,
       cache: false,
       processData: false,
       dataType: "html",
-      beforeSend: showSearchResults.bind(this, searchParams),
+      beforeSend: showSearchResults,
       success: function (response) {
         $(resultsWrapperSelector).html(response);
       },
