@@ -15,7 +15,9 @@ class SearchFormWidget extends Widget
     public $name = 'search-form';
     public $cssClass = '';
     public $resultsWrapperElementId = 'search-results';
+    public $applyResultsWrapperSelector = 'apply-results';
     public $applyUrl;
+    public $searchUrl;
     /**
      * type: [select, text, submit]
      * content: [options: [multiple: Bool, options: Array, name: String, placeholder: String], name: String, name: String]
@@ -28,7 +30,11 @@ class SearchFormWidget extends Widget
         SearchFormAsset::register(\Yii::$app->view);
 
         if (empty($this->applyUrl)) {
-            $this->applyUrl = Url::to('site/search');
+            $this->applyUrl = Url::to('site/apply');
+        }
+
+        if (empty($this->searchUrl)) {
+            $this->searchUrl = Url::to('site/search');
         }
     }
 
@@ -38,7 +44,9 @@ class SearchFormWidget extends Widget
             'name' => $this->name,
             'cssClass' => $this->cssClass,
             'resultsWrapperElementId' => $this->resultsWrapperElementId,
+            'applyResultsWrapperSelector' => $this->applyResultsWrapperSelector,
             'applyUrl' => $this->applyUrl,
+            'searchUrl' => $this->searchUrl,
             'serachFields' => $this->serachFields,
         ]);
     }

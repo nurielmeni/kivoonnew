@@ -36,6 +36,7 @@ $navItems = require __DIR__ . '/_navItems.php';
         </h1>
 
         <?= SearchFormWidget::widget([
+            'cssClass' => 'home-element search-results-element',
             'serachFields' => [
                 [
                     'name' => 'select-category',
@@ -66,6 +67,6 @@ $navItems = require __DIR__ . '/_navItems.php';
 
     </div>
 
-    <div id="search-results" class="bg-gray" style="display: none;"></div>
+    <div id="search-results" class="bg-gray search-results-element" style="display: none;"></div>
 
 </header>

@@ -34,7 +34,9 @@ $js = <<<JS
     SearchForm.init({
         name: '$name',
         resultsWrapperElementId: '$resultsWrapperElementId',
+        applyResultsWrapperSelector: '$applyResultsWrapperSelector',
         applyUrl: '$applyUrl',
+        searchUrl: '$searchUrl',
     });
 JS;
 

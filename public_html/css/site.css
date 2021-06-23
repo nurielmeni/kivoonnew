@@ -159,6 +159,7 @@ button[type="submit"],
 button.apply {
   border: none;
   margin: 2rem 0;
+  cursor: pointer;
 }
 
 label[for="applyform-cvfile"] {

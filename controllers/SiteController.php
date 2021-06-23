@@ -141,6 +141,11 @@ class SiteController extends BaseController
     public function actionApply()
     {
         $request = Yii::$app->request;
+        if (!$request->isAjax) {
+            $this->redirect('/',);
+        }
+
+        $request = Yii::$app->request;
         $jobs = $request->post('jobs');
         $idnumber = $request->post('idnumber');
         $name = $request->post('name');
