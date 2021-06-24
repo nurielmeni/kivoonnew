@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 
 <?php $form = ActiveForm::begin([
     'id' => 'kivoon-contact',
+    'action' => 'site/contact'
 ]); ?>
 
 <div class="flex center row">

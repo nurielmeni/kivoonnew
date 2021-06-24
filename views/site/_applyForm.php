@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 ?>
 <?php $form = ActiveForm::begin([
     'id' => 'kivoon-apply',
+    'action' => 'site/apply',
     'options' => ['enctype' => 'multipart/form-data']
 ]); ?>
 

@@ -142,31 +142,29 @@ class SiteController extends BaseController
     {
         $request = Yii::$app->request;
         if (!$request->isAjax) {
-            $this->redirect('/',);
-        }
-
-        $request = Yii::$app->request;
-        $jobs = $request->post('jobs');
-        $idnumber = $request->post('idnumber');
-        $name = $request->post('name');
-
-        if (empty($jobs)) {
-            return $this->asJson(['status' => 'error', 'html' => $this->renderPartial('_errorNoJobs')]);
             Yii::$app->end();
         }
 
-        $jobs = $jobs === "null" ? [] : explode(',', $jobs);
+        return '<h1>This is the apply response</h1>';
+        $request = Yii::$app->request;
+        $jobCode = $request->post('jobCode');
+        $jobId = $request->post('jobId');
+        $firstname = $request->post('firstname');
+        $lastname = $request->post('lastname');
+        $phone = $request->post('phone');
+        $email = $request->post('email');
 
-        $campaignid = $request->post('campaignid');
-        $campaign = $this->validCampaign($campaignid);
-
-        $model = new ContactForm();
+        $model = new ApplyForm();
+        $model->load($request->post());
         $model->supplierId = Yii::$app->request->get('sid', Yii::$app->params['supplierId']);
 
         $count = 0;
         if ($model->load(Yii::$app->request->post(), '')) {
             $model->cvfile = UploadedFile::getInstance($model, 'cvfile');
-            if ($model->cvfile) $model->upload();
+            if ($model->cvfile && $model->upload()) {
+                // File uploaded succesfully
+
+            }
 
             if (count($jobs) === 0) {
                 $count += $this->applyJob($model);
@@ -177,14 +175,17 @@ class SiteController extends BaseController
             }
 
             $model->removeTmpFiles();
+        }
+    }
 
-            $campaign->apply += $count;
-            $campaign->save(false, ['apply']);
+    public function actionContact()
+    {
+        $request = Yii::$app->request;
+        if (!$request->isAjax) {
+            Yii::$app->end();
         }
 
-        return count($jobs) === 0
-            ? $this->asJson(['status' => 'success', 'html' => $this->renderPartial('_submitGeneralSuccess')])
-            : $this->asJson(['status' => 'success', 'html' => $this->renderPartial('_submitSuccess', ['count' => $count])]);
+        return '<h1>This is the contact response</h1>';
     }
 
     private function applyJob($model, $job = null)

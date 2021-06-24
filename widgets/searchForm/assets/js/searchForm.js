@@ -7,14 +7,19 @@ var SearchForm = (function ($) {
 
   var formWrapperSelector,
     resultsWrapperSelector,
-    applyResultsWrapperSelector,
-    applyUrl,
     searchUrl,
     jobCode,
     jobId,
     searchParams,
     currentPage = page.home;
   var loader = $('<div class="loader"></div>');
+
+  function getJob() {
+    return {
+      jobCode: jobCode,
+      jobId: jobId,
+    };
+  }
 
   function init(options) {
     console.log("Search Form: Init");
@@ -59,13 +64,6 @@ var SearchForm = (function ($) {
       ".job-wrapper button.apply",
       showApplyForm.bind(this)
     );
-
-    // APPLY JOB
-    $(document).on(
-      "click",
-      '#apply button[type="submit"]',
-      applyJob.bind(this)
-    );
   }
 
   function showSearchResults() {
@@ -99,6 +97,7 @@ var SearchForm = (function ($) {
     $(".home-element").hide();
     $(".search-results-element").hide();
     $(".apply-element").show();
+    $("#applyform-firstname").focus();
     offsetElement(".apply-element");
   }
 
@@ -130,6 +129,9 @@ var SearchForm = (function ($) {
       searchParams.get("action") === "search"
     ) {
       searchJobs();
+    } else {
+      history.replaceState({}, "Home", "/");
+      showHomePage();
     }
   }
 
@@ -137,7 +139,7 @@ var SearchForm = (function ($) {
     var lastSearchParams = new URLSearchParams(searchParams);
 
     if (currentPage === page.searchResults && routeTo === page.searchResults) {
-      history.replaceState({}, "Home", "");
+      history.replaceState({}, "Home", "/");
       showHomePage();
       return;
     }
@@ -145,16 +147,6 @@ var SearchForm = (function ($) {
     if (currentPage === page.home && routeTo === page.home) {
       return;
     }
-
-    // switch (currentPage) {
-    //   case page.searchResults:
-    //     history.pushState({}, "search", "?" + lastSearchParams);
-    //     break;
-    //   case page.apply:
-    //     break;
-    //   default:
-    //     history.pushState({}, "Home", "");
-    // }
 
     switch (routeTo) {
       case page.searchResults:
@@ -172,7 +164,7 @@ var SearchForm = (function ($) {
         currentPage = page.apply;
         break;
       default:
-        history.replaceState({}, "Home", "");
+        history.replaceState({}, "Home", "/");
         currentPage = page.home;
     }
   }
@@ -192,33 +184,6 @@ var SearchForm = (function ($) {
     } else if (window.location.pathname === "/" && sParams.keys.length === 0) {
       showHomePage();
     }
-  }
-
-  function applyJob(event) {
-    event.preventDefault();
-
-    var formData = new FormData($("#apply form")[0]);
-    formData.append("jobCode", jobCode);
-    formData.append("jobId", jobId);
-
-    $.ajax({
-      url: applyUrl,
-      data: formData,
-      contentType: false,
-      cache: false,
-      processData: false,
-      dataType: "html",
-      success: function (response) {
-        $(resultsWrapperSelector).html(response);
-      },
-      error: function (response) {
-        console.log(response);
-        $(resultsWrapperSelector).html(
-          '<h3 style="text-align: center; padding-top: 40px;">התרחשה שגיאה</h3><p style="text-align: center">לא הייתה אפשרות לבצע את החיפוש.</p>'
-        );
-      },
-      type: "POST",
-    });
   }
 
   function searchJobs() {
@@ -257,5 +222,6 @@ var SearchForm = (function ($) {
     init: init,
     show: show,
     hide: hide,
+    getJob: getJob,
   };
 })(jQuery);
