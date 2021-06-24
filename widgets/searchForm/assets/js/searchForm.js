@@ -136,28 +136,44 @@ var SearchForm = (function ($) {
   function setHistory(routeTo) {
     var lastSearchParams = new URLSearchParams(searchParams);
 
-    switch (currentPage) {
-      case page.searchResults:
-        history.pushState({}, "search", "?" + lastSearchParams);
-        break;
-      case page.apply:
-        break;
-      default:
-        history.pushState({}, "Home", "");
+    if (currentPage === page.searchResults && routeTo === page.searchResults) {
+      history.replaceState({}, "Home", "");
+      showHomePage();
+      return;
     }
+
+    if (currentPage === page.home && routeTo === page.home) {
+      return;
+    }
+
+    // switch (currentPage) {
+    //   case page.searchResults:
+    //     history.pushState({}, "search", "?" + lastSearchParams);
+    //     break;
+    //   case page.apply:
+    //     break;
+    //   default:
+    //     history.pushState({}, "Home", "");
+    // }
 
     switch (routeTo) {
       case page.searchResults:
-        history.replaceState({}, "search", "?" + lastSearchParams);
+        if (currentPage === page.home) {
+          history.pushState({}, "search", "?" + lastSearchParams);
+        } else {
+          history.replaceState({}, "search", "?" + lastSearchParams);
+        }
+        currentPage = page.searchResults;
         break;
       case page.apply:
         var applyParams = new URLSearchParams();
         applyParams.append("action", "apply");
-
-        history.replaceState({}, "Apply", "?" + applyParams);
+        history.pushState({}, "Apply", "?" + applyParams);
+        currentPage = page.apply;
         break;
       default:
         history.replaceState({}, "Home", "");
+        currentPage = page.home;
     }
   }
 
