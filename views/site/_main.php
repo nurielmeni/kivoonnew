@@ -4,7 +4,9 @@ use yii\helpers\Url;
 use app\widgets\iconTextArea\IconTextAreaWidget;
 ?>
 
-<div class="arroe-divider bg-blue w-100 xs-up home-element"></div>
+<div class="home-element">
+  <div class="arroe-divider bg-blue w-100 xs-up"></div>
+</div>
 
 <?= IconTextAreaWidget::widget([
   'name' => 'meet-us',

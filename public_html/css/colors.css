@@ -7,6 +7,12 @@ and open the template in the editor.
     Created on : Nov 27, 2019, 11:53:56 PM
     Author     : Nurielmeni
 */
+:root {
+  --blue: #5378ae;
+  --gray: #efefef;
+  --green: #6fad3d;
+  --red: #992e2e;
+}
 
 .bg-white {
   background-color: #ffffff;
@@ -23,31 +29,32 @@ and open the template in the editor.
 }
 
 .bg-blue {
-  background-color: #5378ae;
+  background-color: var(--blue, #5378ae);
 }
 .fg-blue {
-  color: #5378ae;
+  color: var(--blue, #5378ae);
 }
 
 .bg-gray {
-  background-color: #efefef;
+  background-color: var(--gray, #efefef);
 }
 .fg-gray {
-  color: #efefef;
+  color: var(--gray, #efefef);
 }
 
 .bg-green {
-  background-color: #6fad3d;
+  background-color: var(--green, #6fad3d);
 }
 .fg-green {
-  color: #6fad3d;
+  color: var(--green, #6fad3d);
 }
 
-.bg-green {
-  background-color: #6fad3d;
+.fg-red {
+  color: var(--red, #992e2e);
 }
-.fg-green {
-  color: #6fad3d;
+
+.bg-red {
+  background-color: var(--red, #992e2e);
 }
 
 .fg-transparent {

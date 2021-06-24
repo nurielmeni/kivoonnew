@@ -22,30 +22,30 @@ use yii\helpers\Url;
 </style>
 
 <div id="mc" class="mail-wrapper" dir="rtl">
-    <h2>טופס יצירת קשר שהתקבל מאתר המשרות של כיוון</h2>
+    <h2><?= Yii::t('app', 'Contact request - Kivoon jobs site') ?></h2>
 
 
     <fieldset dir="rtl">
-        <legend>פרטי הפונה:</legend>
+        <legend><?php Yii::t('app', 'Aplicant data') ?></legend>
 
         <div class="user-info">
-            <label for="mc-name">שם פרטי:</label>
-            <p id="mc-name"><?= $model['firstname'] ?></p>
+            <label for="mc-name"><?= $model->getAttributeLabel('firstname') ?></label>
+            <p id="mc-name"><?= $model->firstname ?></p>
         </div>
 
         <div class="user-info">
-            <label for="mc-last">משפחה:</label>
-            <p id="mc-last"><?= $model['lastname'] ?></p>
+            <label for="mc-last"><?= $model->getAttributeLabel('lastname') ?></label>
+            <p id="mc-last"><?= $model->lastname ?></p>
         </div>
 
         <div class="user-info">
-            <label for="mc-mail">אימייל:</label>
-            <p id="mc-mail"><?= $model['email'] ?></p>
+            <label for="mc-mail"><?= $model->getAttributeLabel('email') ?></label>
+            <p id="mc-mail"><?= $model->email ?></p>
         </div>
     </fieldset>
 
     <section>
-        <?= $model['content'] ?>
+        <?= $model->content ?>
     </section>
 
 </div>

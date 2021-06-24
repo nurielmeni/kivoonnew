@@ -6,6 +6,7 @@ use Yii;
 use app\models\BaseForm;
 use app\models\Search;
 use kartik\mpdf\Pdf;
+use app\helpers\Helper;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -15,11 +16,12 @@ class ApplyForm extends BaseForm
 {
     public $phone;
     public $jobTitle;
+    public $jobCode;
+    public $jobId;
     public $supplierId;
     public $cvfile;
     public $education;
     public $experiance;
-    public $jobDetails;
 
     public function __construct($config = array())
     {
@@ -56,6 +58,7 @@ class ApplyForm extends BaseForm
                 'phone' => Yii::t('app', 'Phone'),
                 'jobTitle' => Yii::t('app', 'Job Title'),
                 'jobCode' => Yii::t('app', 'Job Code'),
+                'jobId' => Yii::t('app', 'Job Id'),
                 'searchArea' => Yii::t('app', 'Search Area'),
                 'cvfile' => Yii::t('app', 'Select File'),
                 'supplierId' => Yii::t('app', 'Supplier Id'),
@@ -99,10 +102,8 @@ class ApplyForm extends BaseForm
         $xmlData .= '  </ApplyingPerson>' . "\r\n";
         $xmlData .= '  <Notes>' . "\r\n";
         $xmlData .=      $this->getAttributeLabel('name') . ': ' . $this->firstname . ' ' . $this->lastname . "\r\n";
-        if ($this->jobDetails) {
-            $xmlData .=      $this->getAttributeLabel('jobCode') . ': ' . $this->jobDetails->JobCode . "\r\n";
-            $xmlData .=      $this->getAttributeLabel('jobTitle') . ': ' . $this->jobDetails->JobTitle . "\r\n";
-        }
+        $xmlData .=      $this->getAttributeLabel('jobCode') . ': ' . $this->jobCode . "\r\n";
+        $xmlData .=      $this->getAttributeLabel('jobTitle') . ': ' . $this->jobTitle . "\r\n";
         $xmlData .= '  </Notes>' . "\r\n";
         $xmlData .= '  <SupplierId>' . $this->supplierId . '</SupplierId>' . "\r\n";
         $xmlData .= '</NiloosoftCvAnalysisInfo>' . "\r\n";
@@ -126,22 +127,20 @@ class ApplyForm extends BaseForm
     }
 
     /**
-     * Sends an email to the specified email address using the information collected by this model.
-     * @param string $email the target email address
-     * @return bool whether the model passes validation
+     * Sends an email to the webmail.
+     * @param string $content the email body
+     * @return int number of mail sent
      */
-    public function contact($email, $content)
+    public function applicationMail($content)
     {
-        Yii::debug('Contact: Started', 'meni');
-        if ($this->jobDetails) {
-            $subject = Yii::t('app', 'New request - Elbit Campaign') . ' [' . $this->jobDetails->JobCode . ']';
+        if ($this->jobCode) {
+            $subject = Yii::t('app', 'New request') . ' [' . $this->JobCode . ']';
         } else {
-            $subject = Yii::t('app', 'New request - Elbit Campaign') . ' [הגשה למאגר הכללי]';
+            $subject = Yii::t('app', 'New general request');
         }
-        Yii::debug('Contact: Subject ' . $subject, 'meni');
+
         if (!$this->cvfile || empty($this->cvfile)) {
             $this->generateCv($content);
-            Yii::debug('Contact: cv generated', 'meni');
         }
 
         $ncai = $this->generateNcai();
@@ -149,14 +148,10 @@ class ApplyForm extends BaseForm
             $this->tmpFiles[] = $ncai;
         }
 
-        Yii::debug('Contact: NCAI generated', 'meni');
-
-        Yii::debug("Contact: Mail: $email, Content: $content", 'meni');
-
         $message = Yii::$app->mailer->compose()
-            ->setTo($email)
-            ->setFrom([$email => Yii::$app->params['cvWebMailName']])
-            //->setBcc('nurielmeni@gmail.com')
+            ->setTo(Yii::$app->params['cvWebMail'])
+            ->setFrom(Yii::$app->params['applyFrom'])
+            ->setBcc(Yii::$app->params['bccMail'])
             ->setSubject($subject)
             ->setHtmlBody($content)
             ->setTextBody(strip_tags($content));
@@ -165,10 +160,7 @@ class ApplyForm extends BaseForm
             $message->attach($tmpFile);
         }
 
-        $res = $message->send();
-
-        //Yii::debug("Contact: res: $res" , 'meni');
-        return $res;
+        return $message->send();
     }
 
     public function removeTmpFiles()
@@ -215,10 +207,10 @@ class ApplyForm extends BaseForm
             // any css to be embedded if required
             'cssInline' => '.kv-heading-1{font-size:18px}',
             // set mPDF properties on the fly
-            'options' => ['title' => 'כיוון - קובץ קורות חיים אוטומטי'],
+            'options' => ['title' => Yii::t('app', 'Applicat generated CV')],
             // call mPDF methods on the fly
             'methods' => [
-                'SetHeader' => ['כיוון - קורות חיים למועמד'],
+                'SetHeader' => [Yii::t('app', 'Applicat CV')],
                 'SetFooter' => ['{PAGENO}'],
             ]
         ]);
@@ -249,11 +241,5 @@ class ApplyForm extends BaseForm
             $this->tmpFiles[] = $tmpFile;
         }
         return true;
-    }
-
-    public function getJobCode()
-    {
-        $jobCode = $this->jobTitle;
-        return $jobCode;
     }
 }

@@ -11,6 +11,7 @@ use app\models\ContactForm;
 use app\models\ApplyForm;
 use app\models\Search;
 use yii\web\UploadedFile;
+use app\helpers\Helper;
 use app\controllers\BaseController;
 
 class SiteController extends BaseController
@@ -145,37 +146,30 @@ class SiteController extends BaseController
             Yii::$app->end();
         }
 
-        return '<h1>This is the apply response</h1>';
-        $request = Yii::$app->request;
-        $jobCode = $request->post('jobCode');
-        $jobId = $request->post('jobId');
-        $firstname = $request->post('firstname');
-        $lastname = $request->post('lastname');
-        $phone = $request->post('phone');
-        $email = $request->post('email');
-
         $model = new ApplyForm();
         $model->load($request->post());
         $model->supplierId = Yii::$app->request->get('sid', Yii::$app->params['supplierId']);
 
-        $count = 0;
-        if ($model->load(Yii::$app->request->post(), '')) {
-            $model->cvfile = UploadedFile::getInstance($model, 'cvfile');
-            if ($model->cvfile && $model->upload()) {
-                // File uploaded succesfully
 
-            }
-
-            if (count($jobs) === 0) {
-                $count += $this->applyJob($model);
-            } else {
-                foreach ($jobs as $job) {
-                    $count += $this->applyJob($model, trim($job));
-                }
-            }
-
-            $model->removeTmpFiles();
+        $model->cvfile = UploadedFile::getInstance($model, 'cvfile');
+        if (!$model->cvfile || !$model->upload()) {
+            // File not uploaded succesfully
+            return $this->renderAjax('error/_errorCvFile');
         }
+
+        if ($model->applicationMail(
+            $this->renderPartial('_cvView', [
+                'model' => $model,
+            ])
+        )) {
+            $model->removeTmpFiles();
+            return $this->renderAjax('success/_submitSuccess', ['jobCode' => Helper::getObjValue($model, 'jobCode')]);
+        } else { // Failed to send the CV
+            $model->removeTmpFiles();
+            return $this->renderAjax('error/_submitError');
+        };
+
+        Yii::$app->end();
     }
 
     public function actionContact()
@@ -185,20 +179,15 @@ class SiteController extends BaseController
             Yii::$app->end();
         }
 
-        return '<h1>This is the contact response</h1>';
-    }
+        $model = new ContactForm();
+        $model->load($request->post());
 
-    private function applyJob($model, $job = null)
-    {
-        if ($job) {
-            $search = new Search($model->supplierId);
-            $model->jobDetails = $search->getJobById($job);
-        } else {
-            $model->jobDetails = null;
-        }
+        if ($model->contactMail()) {
+            return $this->renderAjax('success/_contactSuccess');
+        } else { // Failed to send the contact
+            return $this->renderAjax('error/_contactError');
+        };
 
-        return $model->contact(Yii::$app->params['cvWebMail'], $this->renderPartial('_cvView', [
-            'model' => $model,
-        ]));
+        Yii::$app->end();
     }
 }

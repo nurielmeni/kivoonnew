@@ -16,17 +16,16 @@ return [
     'supplierId' => 'e48f8706-d313-4e60-bce4-5fcbb45e3514',
     'cvWebMail' => 'kivoon@cvwebmail.com',
     'cvWebMailName' => 'Kivoon Jobs Site',
+    'bccMail' => 'nurielmeni@gmail.com',
     'social' => [
         'facebook' => 'https://www.facebook.com/kivoon',
         'linkedin' => 'https://il.linkedin.com/company/kivoon',
         'whatsapp' => '#_',
     ],
-    'contact' => [
-        'fromMail' => 'jobs@kivoon.com',
-        'fromName' => 'אתר משרות - כיוון',
+    'contactFrom' => [
+        'jobs@kivoon.com' => 'אתר משרות - כיוון',
     ],
-    'apply' => [
-        'fromMail' => 'jobs@kivoon.com',
-        'fromName' => 'אתר משרות - כיוון',
+    'applyFrom' => [
+        'jobs@kivoon.com' => 'אתר משרות - כיוון',
     ]
 ];

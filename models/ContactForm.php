@@ -47,16 +47,14 @@ class ContactForm extends BaseForm
      * @param subject $email the target email address
      * @return bool whether email sent successfully
      */
-    public function contactMail($content, $subject)
+    public function contactMail($subject = null)
     {
-        $subject = $subject ? $subject : 'אתר משרות כיןןן - טופס יצירת קשר';
-        return Yii::$app->mailer->compose('contact', ['content' => $content, 'model' => $this->attributes()])
+        $subject = $subject ? $subject : Yii::t('app', 'Kivoon job site - contact form');
+        return Yii::$app->mailer->compose('contact', ['model' => $this])
             ->setTo($this->email)
             ->setBcc(Yii::$app->params['bccMail'])
-            ->setFrom([Yii::$app->params['contact']['fromMail'] => Yii::$app->params['fromName']])
+            ->setFrom(Yii::$app->params['contactFrom'])
             ->setSubject($subject)
-            ->setHtmlBody($content)
-            ->setTextBody(strip_tags($content))
             ->send();
     }
 }

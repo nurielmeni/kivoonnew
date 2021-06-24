@@ -6,8 +6,12 @@ html,
 body {
   height: 100%;
   font-family: "Rubik", sans-serif;
-  color: #5378ae;
-  background-color: #efefef;
+  color: var(--blue, #5378ae);
+  background-color: var(--gray, #efefef);
+}
+
+main article {
+  min-height: calc(100vh - 287px);
 }
 
 /*******  HEADER  *******/
@@ -124,7 +128,7 @@ section.social-share-header i.si,
 section.social-share-header i.si:visited,
 section.social-share-header i.si:active,
 section.social-share-header i.si:focus {
-  color: #5378ae;
+  color: var(--blue, #5378ae);
   font-size: 1.5rem;
 }
 
@@ -152,7 +156,7 @@ form .form-group .form-control {
 form .help-block {
   font-size: 1.25rem;
   text-align: right;
-  color: #992e2e;
+  color: var(--red, #992e2e);
 }
 
 button[type="submit"],
@@ -181,6 +185,18 @@ label[for="applyform-cvfile"] {
 .selected-file-name {
   padding-top: 0.5rem;
   font-size: 1.25rem;
+}
+
+.content-wrapper .results-wrapper {
+  position: relative;
+}
+
+.content-wrapper .results-wrapper span.close {
+  position: absolute;
+  top: -1.25em;
+  left: 1em;
+  cursor: pointer;
+  color: var(--red, #992e2e);
 }
 /*********  END FORM INPUTS   *********/
 

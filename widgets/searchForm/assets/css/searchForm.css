@@ -111,7 +111,7 @@ div.search-form .SumoSelect .select-all {
 }
 
 #search-results {
-  min-height: calc(100vh - 635px);
+  min-height: calc(100vh - 486px);
   margin: 0 auto;
   z-index: 20;
   position: relative;

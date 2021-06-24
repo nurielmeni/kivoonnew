@@ -10,12 +10,21 @@ var Kivoon =
     var contactForm = $(contactFormSelector)[0];
     var applyFormSelector = "#kivoon-apply";
     var applyForm = $(applyFormSelector)[0];
+    var loader = $('<div id="nls-loader" class="loader">אנא המתן...</div>');
 
     // APPLY JOB
     $(document).on("beforeSubmit", applyFormSelector, applyJob.bind(this));
 
     // CONTACT
     $(document).on("beforeSubmit", contactFormSelector, contact.bind(this));
+
+    $(document).on(
+      "click",
+      ".content-wrapper .results-wrapper span.close",
+      function () {
+        removeResults($(this).parents(".content-wrapper"));
+      }
+    );
 
     function contact() {
       console.log("Befroe Submit");
@@ -24,6 +33,7 @@ var Kivoon =
         url: $(contactForm).attr("action"),
         type: "POST",
         data: data,
+        beforeSend: showLoader.bind(null, "#contact .content-wrapper"),
         success: function (response) {
           showResults("#contact .content-wrapper", response);
         },
@@ -47,11 +57,9 @@ var Kivoon =
 
       $.ajax({
         url: $(applyForm).attr("action"),
+        type: "POST",
         data: formData,
-        contentType: false,
-        cache: false,
-        processData: false,
-        dataType: "html",
+        beforeSend: showLoader.bind(null, "#apply .content-wrapper"),
         success: function (response) {
           showResults("#apply .content-wrapper", response);
         },
@@ -59,19 +67,28 @@ var Kivoon =
           console.log("Apply error: ", errMsg);
           showResults("#apply .content-wrapper", errorMessage);
         },
-        type: "POST",
       });
       return false;
     }
 
+    function showLoader(el) {
+      $(el).children().hide();
+      $(el).append($(loader));
+    }
+
     function showResults(el, result) {
-      $(el + ">*").hide();
-      $(el).append('<div class="results-wrapper">' + result + "</div>");
+      $(el).find("#nls-loader").remove();
+      $(el).children().hide();
+      $(el).append(
+        '<div class="results-wrapper"><span class="close">X</span>' +
+          result +
+          "</div>"
+      );
     }
 
     function removeResults(el) {
       $(el).find(".results-wrapper").remove();
-      $(el + ">*").show();
+      $(el).children().show();
     }
 
     return {

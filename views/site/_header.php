@@ -33,40 +33,43 @@ $navItems = require __DIR__ . '/_navItems.php';
             ]) ?>
         </section>
 
-        <h1 class="text-center">
+        <h1 class="home-element text-center">
             בואו למצוא קריירה!
         </h1>
 
-        <?= SearchFormWidget::widget([
-            'cssClass' => 'home-element search-results-element',
-            'serachFields' => [
-                [
-                    'name' => 'select-category',
-                    'type' => SearchFormWidget::SELECT,
-                    'multiple' => true,
-                    'options' => $categories,
-                    'placeholder' => Yii::t('app', 'Category')
-                ],
-                [
-                    'name' => 'select-location',
-                    'type' => SearchFormWidget::SELECT,
-                    'multiple' => true,
-                    'options' => $locations,
-                    'placeholder' => Yii::t('app', 'Location')
-                ],
-                [
-                    'name' => Yii::t('app', 'Search'),
-                    'type' => SearchFormWidget::SUBMIT,
-                ]
-            ],
-        ]) ?>
-
-        <?= NavWidget::widget(['items' => $navItems, 'cssClass' => 'xs-up home-element']) ?>
+        <h1 class="search-results-element text-center">
+            חיפוש משרות
+        </h1>
 
         <div class="home-element">
+            <?= SearchFormWidget::widget([
+                'cssClass' => 'search-results-element',
+                'serachFields' => [
+                    [
+                        'name' => 'select-category',
+                        'type' => SearchFormWidget::SELECT,
+                        'multiple' => true,
+                        'options' => $categories,
+                        'placeholder' => Yii::t('app', 'Category')
+                    ],
+                    [
+                        'name' => 'select-location',
+                        'type' => SearchFormWidget::SELECT,
+                        'multiple' => true,
+                        'options' => $locations,
+                        'placeholder' => Yii::t('app', 'Location')
+                    ],
+                    [
+                        'name' => Yii::t('app', 'Search'),
+                        'type' => SearchFormWidget::SUBMIT,
+                    ]
+                ],
+            ]) ?>
+
+            <?= NavWidget::widget(['items' => $navItems, 'cssClass' => 'xs-up']) ?>
+
             <?= $this->render('_headerSocial') ?>
         </div>
-
     </div>
 
     <div id="search-results" class="bg-gray search-results-element" style="display: none;"></div>

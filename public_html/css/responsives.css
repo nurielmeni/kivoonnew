@@ -39,6 +39,16 @@
     flex-direction: column;
   }
 
+  #search-results {
+    padding: 0 1rem;
+  }
+
+  div.search-form,
+  #search-results > div.container,
+  #search-results > div.container .job-wrapper h2 {
+    font-size: 1.3rem;
+  }
+
   .header-content h1 {
     font-size: 3rem;
   }
@@ -52,20 +62,20 @@
   }
 
   .xs-down {
-    display: block;
+    display: block !important;
   }
 
   .xs-up {
-    display: none;
+    display: none !important;
   }
 }
 
 @media all and (min-width: 768px) {
   .xs-down {
-    display: none;
+    display: none !important;
   }
 
   .xs-up {
-    display: block;
+    display: block !important;
   }
 }

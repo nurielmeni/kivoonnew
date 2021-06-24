@@ -12,7 +12,6 @@ var SearchForm = (function ($) {
     jobId,
     searchParams,
     currentPage = page.home;
-  var loader = $('<div class="loader"></div>');
 
   function getJob() {
     return {
@@ -93,6 +92,8 @@ var SearchForm = (function ($) {
     jobId = $(job.target).data("job-id");
 
     setHistory(page.apply);
+
+    Kivoon && Kivoon.removeResults();
 
     $(".home-element").hide();
     $(".search-results-element").hide();
