@@ -120,7 +120,7 @@ class SiteController extends BaseController
     {
         $request = Yii::$app->request;
         if (!$request->isAjax) {
-            $this->redirect('/',);
+            $this->redirect('/');
         }
 
         $response = Yii::$app->response;
