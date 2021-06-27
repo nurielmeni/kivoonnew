@@ -35,6 +35,7 @@ class SearchFormWidget extends Widget
     public function run()
     {
         return $this->render('searchForm', [
+            'me' => $this,
             'name' => $this->name,
             'cssClass' => $this->cssClass,
             'resultsWrapperElementId' => $this->resultsWrapperElementId,
