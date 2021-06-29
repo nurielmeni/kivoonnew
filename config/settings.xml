@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-    <fromMail>kivoonnew@cvwebmail.com</fromMail>
-    <toMail>kivoonnew@cvwebmail.com</toMail>
-    <fromName>Elbit Campaign Site</fromName>
-    <nsoftSiteId>54db0aad-09b9-4954-a9d4-33512df547fb</nsoftSiteId>
-    <nsoftApplicationId>54db0aad-09b9-4954-a9d4-33512df547fb</nsoftApplicationId>
-    <categorySupplierId>e48f8706-d313-4e60-bce4-5fcbb45e3514</categorySupplierId>
+    <fromMail>kivoonjobs@hunterhrms.com</fromMail>
+    <toMail>kivoon@cvwebmail.com</toMail>
+    <fromName>Kivoon Site</fromName>
+    <nsoftSiteId>c5a04df4-5b96-4fd0-94d7-e0e3b3f85bed</nsoftSiteId>
+    <nsoftApplicationId>c5a04df4-5b96-4fd0-94d7-e0e3b3f85bed</nsoftApplicationId>
+    <categorySupplierId>4434af8e-46f9-46cb-89c2-a682f341d001</categorySupplierId>
     <nlsCardsWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</nlsCardsWsdlUrl>
     <nlsSecurityWsdlUrl>https://hunterdirectory.hunterhrms.com/SecurityService.svc?wsdl</nlsSecurityWsdlUrl>
     <nlsDirectoryWsdlUrl>https://hunterdirectory.hunterhrms.com/DirectoryManagementService.svc?wsdl</nlsDirectoryWsdlUrl>
-    <nlsSecurityDomain>elbitsys</nlsSecurityDomain>
-    <nlsSecurityUsername>Joomlasite</nlsSecurityUsername>
-    <nlsSecurityPassword>pass2017</nlsSecurityPassword>
+    <nlsSecurityDomain>kivoon</nlsSecurityDomain>
+    <nlsSecurityUsername>jobsite</nlsSecurityUsername>
+    <nlsSecurityPassword>pass2021</nlsSecurityPassword>
     <searchServiceWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</searchServiceWsdlUrl>
     <languageCode>1033</languageCode>
     <categoryIDs/>

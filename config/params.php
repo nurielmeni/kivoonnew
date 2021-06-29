@@ -13,9 +13,9 @@ return [
             'todayHighlight' => true,
         ]
     ],
-    'supplierId' => 'e48f8706-d313-4e60-bce4-5fcbb45e3514',
+    'supplierId' => '4434af8e-46f9-46cb-89c2-a682f341d001',
     'cvWebMail' => 'kivoon@cvwebmail.com',
-    'cvWebMailName' => 'Kivoon Jobs Site',
+    'cvWebMailName' => 'Kivoon Site',
     'bccMail' => 'nurielmeni@gmail.com',
     'social' => [
         'facebook' => 'https://www.facebook.com/kivoon',
