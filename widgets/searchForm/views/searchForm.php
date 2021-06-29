@@ -7,7 +7,7 @@ use nurielmeni\sumoSelect\SumoSelectWidget;
 <div id="<?= $name ?>" class="search-form <?= $cssClass ?>">
 	<form class="flex space-around align-center">
 		<?php foreach ($serachFields as $serachField) : ?>
-			<?php if ($serachField['type'] === $this->context::SELECT) : ?>
+			<?php if ($serachField['type'] === $me::SELECT) : ?>
 				<?= SumoSelectWidget::widget([
 					'multiple' => $serachField['multiple'],
 					'name' => $serachField['name'],
@@ -16,9 +16,9 @@ use nurielmeni\sumoSelect\SumoSelectWidget;
 						'placeholder' => $serachField['placeholder'],
 					]
 				]) ?>
-			<?php elseif ($serachField['type'] === $this->context::TEXT) : ?>
+			<?php elseif ($serachField['type'] === $me::TEXT) : ?>
 
-			<?php elseif ($serachField['type'] === $this->context::SUBMIT) : ?>
+			<?php elseif ($serachField['type'] === $me::SUBMIT) : ?>
 				<div class="btn submit">
 					<button type="submit" class="flex center bg-green fg-white border-none"><?= $serachField['name'] ?></button>
 				</div>

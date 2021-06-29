@@ -18,7 +18,7 @@ $navItems = require __DIR__ . '/_navItems.php';
             <a href="\">
                 <img src="<?= Url::to('@web/images/logo/logo_sofi.png') ?>" srcset="<?= Url::to('@web/images/logo/logo_sofi@2x.png') ?> 2x, <?= Url::to('@web/images/logo/logo_sofi@3x.png') ?> 3x" class="logo-sofi" alt="Logo Kivoon">
             </a>
-            <?= \nurielmeni\socialConnect\socialConnectWidget::widget([
+            <?= \nurielmeni\socialConnect\SocialConnectWidget::widget([
                 'cssClass' => 'xs-up',
                 'size' => '38px',
                 'color' => '#5378ae',

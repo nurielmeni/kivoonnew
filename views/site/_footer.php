@@ -1,7 +1,7 @@
 <footer class="bg-blue fg-white">
   <h2 class="text-center">חפשו אותנו גם ב:</h2>
 
-  <?= \nurielmeni\socialConnect\socialConnectWidget::widget([
+  <?= \nurielmeni\socialConnect\SocialConnectWidget::widget([
     'size' => '32px',
     'color' => '#FFF',
     'items' => [
