@@ -80,6 +80,7 @@ var SearchForm = (function ($) {
   function showHomePage() {
     setHistory(page.home);
 
+    $(".search-results-element").hide();
     $(".home-element").show();
     $(resultsWrapperSelector).html("");
     $(applyResultsWrapperSelector).html("");

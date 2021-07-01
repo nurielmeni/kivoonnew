@@ -19,6 +19,8 @@ return [
     'Location' => 'מיקום',
     'Job Location:' => 'מקום משרה:',
     'Search' => 'חפש',
+    'Find career!' => 'בואו למצוא קריירה!',
+    'Job Search' => 'חיפוש משרות',
     'No results found for the search options' => 'לא נמצאו משרות מתאימות למאפייני החיפוש',
     'You can change the selected options and try again.' => 'באפשרותך לשנות את מאפייני החיפוש ולנסות שוב.',
     'The search completed. {0,number} jobs were found.' => 'החיפוש הושלם. נמצאו {0, number} משרות מתאימות.',

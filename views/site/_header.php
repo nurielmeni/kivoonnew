@@ -34,16 +34,16 @@ $navItems = require __DIR__ . '/_navItems.php';
         </section>
 
         <h1 class="home-element text-center">
-            בואו למצוא קריירה!
+            <?= Yii::t('app', 'Find career!') ?>
         </h1>
 
-        <h1 class="search-results-element text-center">
-            חיפוש משרות
+        <h1 class="search-results-element text-center" style="display: none;">
+            <?= Yii::t('app', 'Job Search') ?>
         </h1>
 
         <div class="home-element">
             <?= SearchFormWidget::widget([
-                'cssClass' => 'search-results-element',
+                'cssClass' => 'home-element search-results-element',
                 'serachFields' => [
                     [
                         'name' => 'select-category',
