@@ -111,10 +111,12 @@ div.search-form .SumoSelect .select-all {
 }
 
 #search-results {
-  min-height: calc(100vh - 486px);
+  min-height: calc(100vh - 368px);
   margin: 0 auto;
   z-index: 20;
   position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #apply-response {
@@ -142,5 +144,5 @@ div.search-form .SumoSelect .select-all {
   }
 }
 
-@media all and (min-width: 680px) {
+@media all and (max-width: 680px) {
 }

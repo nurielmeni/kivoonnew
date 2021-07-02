@@ -8,7 +8,11 @@ use app\helpers\Helper;
 
 ?>
 <div class="container leggend">
-    <p><?= Yii::t('app', 'The search completed. {0,number} jobs were found.', count($jobs)) ?></p>
+    <?php if (count($jobs) === 1) : ?>
+        <p><?= Yii::t('app', 'The search completed. one jobs was found.') ?></p>
+    <?php else : ?>
+        <p><?= Yii::t('app', 'The search completed. {0,number} jobs were found.', count($jobs)) ?></p>
+    <?php endif; ?>
 </div>
 <div class="container">
     <?php foreach ($jobs as $job) : ?>
@@ -30,8 +34,18 @@ use app\helpers\Helper;
             </div>
             <p><button type="text" class="show-job-details fg-green bg-transparent border-none underline"><?= Yii::t('app', 'Show job details') ?></button></p>
             <div class="job-details" style="display: none;">
-                <p class="underline"><strong><?= Yii::t('app', 'Description:') ?></strong></p>
-                <article><?= $job['Description'] ?></article>
+                <?php if (!empty($job['Description'])) : ?>
+                    <p class="underline"><strong><?= Yii::t('app', 'Description:') ?></strong></p>
+                    <section>
+                        <?= $job['Description'] ?>
+                    </section>
+                <?php endif; ?>
+                <?php if (!empty($job['Requiremets'])) : ?>
+                    <p class="underline"><strong><?= Yii::t('app', 'Requiremets:') ?></strong></p>
+                    <section>
+                        <?= $job['Requiremets'] ?>
+                    </section>
+                <?php endif; ?>
             </div>
             <button class="apply bg-blue fg-white xs-down text-center" data-job-code="<?= Helper::getArrValue($job, 'JobCode') ?>">
                 <?= Yii::t('app', 'Apply') ?>

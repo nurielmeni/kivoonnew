@@ -89,6 +89,8 @@ var SearchForm = (function ($) {
   function showApplyForm(job) {
     job.preventDefault();
 
+    Kivoon && Kivoon.resetApply();
+
     jobCode = $(job.target).data("job-code");
     jobId = $(job.target).data("job-id");
 
@@ -182,7 +184,7 @@ var SearchForm = (function ($) {
       window.location.pathname === "/" &&
       sParams.get("action") === "apply"
     ) {
-      showApplyForm("");
+      showHomePage();
     } else if (window.location.pathname === "/" && sParams.keys.length === 0) {
       showHomePage();
     }

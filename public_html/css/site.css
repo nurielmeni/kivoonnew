@@ -4,24 +4,26 @@
 
 html,
 body {
-  height: 100%;
   font-family: "Rubik", sans-serif;
   color: var(--blue, #5378ae);
   background-color: var(--gray, #efefef);
 }
 
-main article {
-  min-height: calc(100vh - 287px);
+body > .wrapper {
+  height: 100%;
+  min-height: calc(100vh - 163px);
 }
 
 /*******  HEADER  *******/
 header {
   position: relative;
-  z-index: 10;
+  z-index: 50;
 }
 
 .header-content h1 {
-  font-size: 5rem;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
 .overlay:after {
@@ -47,7 +49,7 @@ header {
   position: fixed;
   width: 100%;
   height: auto;
-  z-index: 20;
+  z-index: 5;
   opacity: 0.2;
 }
 
@@ -55,11 +57,6 @@ header {
   height: 100px;
   margin: 10px;
   object-fit: contain;
-}
-
-div.header-content {
-  position: relative;
-  z-index: 100;
 }
 
 /********   BG BORDERED CIRCLE    ********/
@@ -133,6 +130,12 @@ section.social-share-header i.si:focus {
 }
 
 /**********   FORM INPUTS   ***********/
+main {
+  position: relative;
+  z-index: 30;
+}
+
+/**********   FORM INPUTS   ***********/
 form button {
   cursor: pointer;
 }
@@ -180,6 +183,7 @@ label[for="applyform-cvfile"] {
 
 .form-group.field-applyform-cvfile .help-block {
   text-align: center;
+  padding-top: 0.5rem;
 }
 
 .selected-file-name {
@@ -203,11 +207,11 @@ label[for="applyform-cvfile"] {
 /************      FOOTER      ***********/
 footer {
   display: flex;
-  position: relative;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   z-index: 100;
+  width: 100%;
 }
 
 footer > p > a {

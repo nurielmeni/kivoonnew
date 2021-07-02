@@ -6,13 +6,16 @@
     'color' => '#FFF',
     'items' => [
       'facebook' => [
-        'url' => '#',
+        'url' => 'https://www.facebook.com/kivoon.biz',
       ],
       'linkedin' => [
-        'url' => '#',
+        'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
+      ],
+      'instagram' => [
+        'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link'
       ],
       'whatsapp' => [
-        'url' => '#',
+        'url' => 'https://wa.me/972508833111',
       ]
     ]
   ]) ?>

@@ -91,9 +91,19 @@ var Kivoon =
       $(el).children().show();
     }
 
+    function resetApply() {
+      $(applyFormSelector).yiiActiveForm("resetForm");
+      applyForm.reset();
+    }
+    function resetContact() {
+      $(contactFormSelector).yiiActiveForm("resetForm");
+      contactForm.reset();
+    }
     return {
       version: version,
       applyJob: applyJob,
       removeResults: removeResults,
+      resetApply: resetApply,
+      resetContact: resetContact,
     };
   })(jQuery);

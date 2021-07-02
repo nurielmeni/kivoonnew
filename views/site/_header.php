@@ -8,10 +8,12 @@ $navItems = require __DIR__ . '/_navItems.php';
 
 ?>
 
+<video id="video-background" class="home-element" poster="poster.jpg" autoplay muted loop>
+    <source src="<?= Url::to('@web/videos/bgvideo.mp4') ?>" type="video/mp4">
+</video>
+
 <header>
-    <video id="video-background" class="home-element" poster="poster.jpg" autoplay muted loop>
-        <source src="<?= Url::to('@web/videos/bgvideo.mp4') ?>" type="video/mp4">
-    </video>
+
 
     <div class="header-content">
         <section class="flex space-between">
@@ -21,13 +23,13 @@ $navItems = require __DIR__ . '/_navItems.php';
             <?= \nurielmeni\socialConnect\SocialConnectWidget::widget([
                 'cssClass' => 'xs-up',
                 'size' => '38px',
-                'color' => '#5378ae',
+                'color' => '#104ca2',
                 'items' => [
                     'facebook' => [
-                        'url' => '#',
+                        'url' => 'https://www.facebook.com/kivoon.biz',
                     ],
                     'linkedin' => [
-                        'url' => '#',
+                        'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
                     ]
                 ]
             ]) ?>
@@ -41,7 +43,7 @@ $navItems = require __DIR__ . '/_navItems.php';
             <?= Yii::t('app', 'Job Search') ?>
         </h1>
 
-        <div class="home-element">
+        <div class="home-element main-content">
             <?= SearchFormWidget::widget([
                 'cssClass' => 'home-element search-results-element',
                 'serachFields' => [

@@ -46,7 +46,7 @@ AppAsset::register($this);
     <?php endif; ?>
 </head>
 
-<body class="campaign">
+<body>
 
     <?php if (isset($this->blocks['tag_body'])) : ?>
         <?= $this->blocks['tag_body'] ?>
@@ -63,6 +63,8 @@ AppAsset::register($this);
 
         <?= $content ?>
     </div>
+
+    <?= $this->render('_footer') ?>
 
     <?php $this->endBody() ?>
 

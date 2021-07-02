@@ -24,6 +24,7 @@ return [
     'No results found for the search options' => 'לא נמצאו משרות מתאימות למאפייני החיפוש',
     'You can change the selected options and try again.' => 'באפשרותך לשנות את מאפייני החיפוש ולנסות שוב.',
     'The search completed. {0,number} jobs were found.' => 'החיפוש הושלם. נמצאו {0, number} משרות מתאימות.',
+    'The search completed. one jobs was found.' => 'החיפוש הושלם. נמצאה משרה אחת מתאימה.',
     'Description:' => 'תיאור:',
     'Show job details' => 'לצפייה בפרטי המשרה',
     'No CV submitted' => 'קורות החיים לא נשלחו',
@@ -45,4 +46,5 @@ return [
     'Aplicant data' => 'פרטי הפונה',
     'Contact sent successfuly' => 'הטופס נשלח בהצלחה',
     'The contact form request sent successfuly' => 'פרטי יצירת הקשר נשלחו בהצלחה',
+    'Requiremets:' => 'דרישות המשרה:'
 ];
