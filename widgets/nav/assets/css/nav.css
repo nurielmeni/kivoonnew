@@ -37,12 +37,15 @@ nav.kivoon-nav ul li {
   list-style: none;
 }
 
-nav.kivoon-nav ul li a {
+nav.kivoon-nav ul li a,
+nav.kivoon-nav ul li a:active,
+nav.kivoon-nav ul li a:visited {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
+  color: #114ca2;
 }
 
 @media all and (min-width: 680px) {
