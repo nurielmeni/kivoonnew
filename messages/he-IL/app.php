@@ -14,7 +14,7 @@ return [
     'Supplier Id' => 'קוד ספק',
     'Education' => 'השכלה',
     'Experiance' => 'נסיון',
-    'EmploymentType' => 'סוג משרה',
+    'EmploymentType:' => 'סוג משרה:',
     'Apply' => 'הגש מועמדות',
     'Category' => 'תחום',
     'Location' => 'מיקום',
