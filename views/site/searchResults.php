@@ -46,6 +46,12 @@ use app\helpers\Helper;
                         <?= $job['Requiremets'] ?>
                     </section>
                 <?php endif; ?>
+                <?php if (!empty($job['EmploymentType'])) : ?>
+                    <p class="underline"><strong><?= Yii::t('app', 'EmploymentType:') ?></strong></p>
+                    <section>
+                        <?= $job['EmploymentType'] ?>
+                    </section>
+                <?php endif; ?>
             </div>
             <button class="apply bg-blue fg-white xs-down text-center" data-job-code="<?= Helper::getArrValue($job, 'JobCode') ?>">
                 <?= Yii::t('app', 'Apply') ?>
