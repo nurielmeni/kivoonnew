@@ -48,5 +48,9 @@ nav.kivoon-nav ul li a:visited {
   color: #114ca2;
 }
 
-@media all and (min-width: 680px) {
+@media all and (min-width: 920px) {
+  nav.kivoon-nav {
+    margin-top: calc((100vw / 16 * 9 - 515px) / 2);
+    margin-bottom: calc((100vw / 16 * 9 - 515px) / 2);
+  }
 }
