@@ -22,6 +22,7 @@ $navItems = require __DIR__ . '/_navItems.php';
             </a>
             <?= \nurielmeni\socialConnect\SocialConnectWidget::widget([
                 'size' => '36px',
+                'cssClass' => 'xs-up',
                 'color' => '#104ca2',
                 'items' => [
                     'facebook' => [
@@ -38,7 +39,6 @@ $navItems = require __DIR__ . '/_navItems.php';
                     ]
                 ]
             ]) ?>
-
         </section>
 
         <h1 class="home-element text-center">
