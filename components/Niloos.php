@@ -28,7 +28,7 @@ class Niloos
     private $siteId = '037685f2-9adc-4d65-954b-7212be692d85';
     private $username = 'campaign';
     private $password = 'pass2019';
-    private $languageCode = '1033';
+    private $languageCode = '1037';
     private $client;
     private $auth;
 
