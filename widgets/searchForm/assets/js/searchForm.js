@@ -29,6 +29,9 @@ var SearchForm = (function ($) {
     applyUrl = options.applyUrl;
     searchUrl = options.searchUrl;
 
+    // Display the form (change hidden)
+    $(formWrapperSelector).prop("hidden", false);
+
     initUrlHandler();
     // EVENT LISTENERS
     $(window).on("popstate", function (event) {
