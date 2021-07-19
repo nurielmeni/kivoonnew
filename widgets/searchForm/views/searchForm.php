@@ -5,7 +5,7 @@ use nurielmeni\sumoSelect\SumoSelectWidget;
 ?>
 
 <div id="<?= $name ?>" class="search-form <?= $cssClass ?>" hidden="hidden">
-	<form class="flex space-around align-center" hidden>
+	<form class="flex space-around align-center">
 		<?php foreach ($serachFields as $serachField) : ?>
 			<?php if ($serachField['type'] === $me::SELECT) : ?>
 				<?= SumoSelectWidget::widget([
