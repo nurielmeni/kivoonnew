@@ -13,7 +13,7 @@
     <nlsSecurityUsername>jobsite</nlsSecurityUsername>
     <nlsSecurityPassword>pass2021</nlsSecurityPassword>
     <searchServiceWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</searchServiceWsdlUrl>
-    <languageCode>1033</languageCode>
+    <languageCode>1037</languageCode>
     <categoryIDs/>
     <trace>1</trace>
     <exceptions>1</exceptions>
