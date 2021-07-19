@@ -21,8 +21,8 @@ $navItems = require __DIR__ . '/_navItems.php';
                 <img src="<?= Url::to('@web/images/logo/logo_sofi.png') ?>" srcset="<?= Url::to('@web/images/logo/logo_sofi@2x.png') ?> 2x, <?= Url::to('@web/images/logo/logo_sofi@3x.png') ?> 3x" class="logo-sofi" alt="Logo Kivoon">
             </a>
             <?= \nurielmeni\socialConnect\SocialConnectWidget::widget([
+                'size' => '36px',
                 'cssClass' => 'xs-up',
-                'size' => '38px',
                 'color' => '#104ca2',
                 'items' => [
                     'facebook' => [
@@ -30,6 +30,12 @@ $navItems = require __DIR__ . '/_navItems.php';
                     ],
                     'linkedin' => [
                         'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
+                    ],
+                    'instagram' => [
+                        'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link'
+                    ],
+                    'whatsapp' => [
+                        'url' => 'https://wa.me/972508833111',
                     ]
                 ]
             ]) ?>

@@ -112,9 +112,3 @@
     display: block !important;
   }
 }
-
-@media all and (min-width: 1000px) {
-  nav.kivoon-nav {
-    margin-bottom: 3rem;
-  }
-}

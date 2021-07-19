@@ -206,6 +206,7 @@ label[for="applyform-cvfile"] {
 
 /************      FOOTER      ***********/
 footer {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
