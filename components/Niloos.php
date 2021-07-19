@@ -212,6 +212,7 @@ class Niloos
     public function getListByName($name)
     {
         $languageCode = $this->languageCode;
+        \Yii::$app->cache->flush();
 
         $res = \Yii::$app->cache->getOrSet($name, function () use ($name, $languageCode) {
             $this->setClient('directory');

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'flushCache' => true,
+    'flushCache' => false,
     'bccMail' => 'nurielmeni@gmail.com',
     'datePickerKvOptions' => [
         'type' => 1,
