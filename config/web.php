@@ -6,8 +6,8 @@ $socialShare = require __DIR__ . '/socialShare.php';
 //$db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'elbit-campaign',
-    'name' => 'כיוון - חיפוש משרה',
+    'id' => 'kivoon',
+    'name' => 'ברוכים הבאים לכיוון',
     'language' => 'he-IL',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],

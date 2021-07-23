@@ -3,7 +3,7 @@ return [
     'First Name' => 'שם פרטי',
     'Last Name' => 'שם משפחה',
     'Email' => 'אימייל',
-    'Content' => 'תוכן הפניה',
+    'Content' => 'איך אפשר לעזור?',
     'Submit' => 'שלח פנייה',
     'Phone' => 'טלפון',
     'Job Title' => 'משרה',

@@ -50,7 +50,6 @@ nav.kivoon-nav ul li a:visited {
 
 @media all and (min-width: 920px) {
   nav.kivoon-nav {
-    margin-top: calc((100vw / 16 * 9 - 520px) / 2);
     margin-bottom: calc((100vw / 16 * 9 - 520px) / 2);
   }
 }

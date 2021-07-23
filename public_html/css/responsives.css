@@ -112,3 +112,9 @@
     display: block !important;
   }
 }
+
+@media all and (min-width: 920px) {
+  .header-content h1 {
+    margin-top: calc((100vw / 16 * 9 - 520px) / 2);
+  }
+}
