@@ -24,6 +24,7 @@ $navItems = require __DIR__ . '/_navItems.php';
                 'size' => '36px',
                 'cssClass' => 'xs-up',
                 'color' => '#104ca2',
+                'image' => true,
                 'items' => [
                     'facebook' => [
                         'url' => 'https://www.facebook.com/kivoon.biz',
@@ -32,7 +33,7 @@ $navItems = require __DIR__ . '/_navItems.php';
                         'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
                     ],
                     'instagram' => [
-                        'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link'
+                        'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link',
                     ],
                     'whatsapp' => [
                         'url' => 'https://wa.me/972508833111',
