@@ -20,6 +20,7 @@ $navItems = require __DIR__ . '/_navItems.php';
             <a href="\">
                 <img src="<?= Url::to('@web/images/logo/logo_only.png') ?>" class="logo-sofi" alt="Logo Kivoon">
             </a>
+            
             <?= \nurielmeni\socialConnect\SocialConnectWidget::widget([
                 'size' => '36px',
                 'cssClass' => 'xs-up',
