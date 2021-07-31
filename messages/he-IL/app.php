@@ -47,5 +47,6 @@ return [
     'Aplicant data' => 'פרטי הפונה',
     'Contact sent successfuly' => 'הטופס נשלח בהצלחה',
     'The contact form request sent successfuly' => 'פרטי יצירת הקשר נשלחו בהצלחה',
-    'Requiremets:' => 'דרישות המשרה:'
+    'Requiremets:' => 'דרישות המשרה:',
+    'to tob: {jobCode}' => 'עבור משרה: {jobCode}',
 ];
