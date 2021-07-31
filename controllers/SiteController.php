@@ -148,7 +148,9 @@ class SiteController extends BaseController
 
         $model = new ApplyForm();
         $model->load($request->post());
-        $model->supplierId = Yii::$app->request->get('sid', Yii::$app->params['supplierId']);
+        $model->supplierId = Yii::$app->request->post('sid', Yii::$app->params['supplierId']);
+        $model->jobCode = Yii::$app->request->post('jobCode');
+        $model->jobId = Yii::$app->request->post('jobId');
 
 
         $model->cvfile = UploadedFile::getInstance($model, 'cvfile');

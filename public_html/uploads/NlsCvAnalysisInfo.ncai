@@ -6,7 +6,7 @@
     <CreatedBy>0</CreatedBy>
     <CreationDate xsi:nil="true"/>
     <Email></Email>
-    <EntityLocalName>בדיקה בדיקתי</EntityLocalName>
+    <EntityLocalName>test tett</EntityLocalName>
     <HighestStage xsi:nil="true"/>
     <IsParseAllAsTransient xsi:nil="true"/>
     <LockLevelStatus>0</LockLevelStatus>
@@ -28,7 +28,7 @@
     <UserId xsi:nil="true"/>
   </ApplyingPerson>
   <Notes>
-Name: בדיקה בדיקתי
+Name: test tett
 קוד משרה: 
 משרה: 
   </Notes>
