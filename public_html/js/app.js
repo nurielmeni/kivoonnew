@@ -59,6 +59,9 @@ var Kivoon =
         url: $(applyForm).attr("action"),
         type: "POST",
         data: formData,
+        processData: false,
+        contentType: false,
+        cache: false,
         beforeSend: showLoader.bind(null, "#apply .content-wrapper"),
         success: function (response) {
           showResults("#apply .content-wrapper", response);
