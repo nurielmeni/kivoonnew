@@ -13,6 +13,7 @@ use yii\helpers\ArrayHelper;
 class ContactForm extends BaseForm
 {
     public $content;
+    public $email;
 
     /**
      * @return array the validation rules.

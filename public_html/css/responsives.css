@@ -89,6 +89,10 @@
   section.social-share-header {
     margin-top: 0;
   }
+
+  .logo-sofi {
+    position: relative;
+  }
 }
 
 @media all and (max-width: 680px) {

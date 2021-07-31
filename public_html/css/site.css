@@ -54,9 +54,12 @@ header {
 }
 
 .logo-sofi {
-  height: 100px;
+  height: 130px;
   margin: 10px;
   object-fit: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /********   BG BORDERED CIRCLE    ********/

@@ -180,6 +180,7 @@ class SiteController extends BaseController
         }
 
         $model = new ContactForm();
+        $model->email = Yii::$app->params['contactMail'];
         $model->load($request->post());
 
         if ($model->contactMail()) {

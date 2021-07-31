@@ -15,6 +15,7 @@ return [
     ],
     'supplierId' => '4434af8e-46f9-46cb-89c2-a682f341d001',
     'cvWebMail' => 'kivoon@cvwebmail.com',
+    'contactMail' => 'doron@kivoon.biz',
     'cvWebMailName' => 'Kivoon Site',
     'bccMail' => 'nurielmeni@gmail.com',
     'social' => [
