@@ -1,3 +1,7 @@
+<?php
+  use yii\helpers\Url;
+?>
+
 <footer class="bg-blue fg-white">
   <h2 class="text-center">חפשו אותנו גם ב:</h2>
 
@@ -6,16 +10,20 @@
     'color' => '#FFF',
     'items' => [
       'facebook' => [
-        'url' => 'https://www.facebook.com/kivoon.biz',
+          'url' => 'https://www.facebook.com/kivoon.biz',
+          'imgUrl' => Url::to('@web/images/social/facebook.svg')
       ],
       'linkedin' => [
-        'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
+          'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
+          'imgUrl' => Url::to('@web/images/social/linkedin.svg')
       ],
       'instagram' => [
-        'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link'
+          'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link',
+          'imgUrl' => Url::to('@web/images/social/instagram.svg')
       ],
       'whatsapp' => [
-        'url' => 'https://wa.me/972508833111',
+          'url' => 'https://wa.me/972508833111',
+          'imgUrl' => Url::to('@web/images/social/whatsapp.svg')
       ]
     ]
   ]) ?>
