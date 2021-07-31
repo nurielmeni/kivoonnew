@@ -134,7 +134,7 @@ class ApplyForm extends BaseForm
     public function applicationMail($content)
     {
         if ($this->jobCode) {
-            $subject = Yii::t('app', 'New request') . ' [' . $this->JobCode . ']';
+            $subject = Yii::t('app', 'New request') . ' [' . $this->jobCode . ']';
         } else {
             $subject = Yii::t('app', 'New general request');
         }
