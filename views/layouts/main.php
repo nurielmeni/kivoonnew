@@ -34,7 +34,7 @@ AppAsset::register($this);
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <!-- ICON -->
-    <link rel="shortcut icon" href="<?= Url::to('@web/images/logo/logo_sofi.png') ?>">
+    <link rel="shortcut icon" href="<?= Url::to('@web/images/logo/logo_only.png') ?>">
 
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
