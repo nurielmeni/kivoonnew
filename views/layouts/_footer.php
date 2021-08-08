@@ -1,5 +1,6 @@
 <?php
-  use yii\helpers\Url;
+
+use yii\helpers\Url;
 ?>
 
 <footer class="bg-blue fg-white">
@@ -9,21 +10,21 @@
     'size' => '32px',
     'color' => '#FFF',
     'items' => [
+      'whatsapp' => [
+        'url' => 'https://wa.me/972508833111',
+        'imgUrl' => Url::to('@web/images/social/whatsapp.svg')
+      ],
       'facebook' => [
-          'url' => 'https://www.facebook.com/kivoon.biz',
-          'imgUrl' => Url::to('@web/images/social/facebook.svg')
+        'url' => 'https://www.facebook.com/kivoon.biz',
+        'imgUrl' => Url::to('@web/images/social/facebook.svg')
       ],
       'linkedin' => [
-          'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
-          'imgUrl' => Url::to('@web/images/social/linkedin.svg')
+        'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
+        'imgUrl' => Url::to('@web/images/social/linkedin.svg')
       ],
       'instagram' => [
-          'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link',
-          'imgUrl' => Url::to('@web/images/social/instagram.svg')
-      ],
-      'whatsapp' => [
-          'url' => 'https://wa.me/972508833111',
-          'imgUrl' => Url::to('@web/images/social/whatsapp.svg')
+        'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link',
+        'imgUrl' => Url::to('@web/images/social/instagram.svg')
       ]
     ]
   ]) ?>

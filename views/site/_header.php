@@ -20,12 +20,16 @@ $navItems = require __DIR__ . '/_navItems.php';
             <a href="\">
                 <img src="<?= Url::to('@web/images/logo/logo_sofi.png') ?>" class="logo-sofi" alt="Logo Kivoon">
             </a>
-            
+
             <?= \nurielmeni\socialConnect\SocialConnectWidget::widget([
                 'size' => '36px',
                 'cssClass' => 'xs-up',
                 'color' => '#104ca2',
                 'items' => [
+                    'whatsapp' => [
+                        'url' => 'https://wa.me/972508833111',
+                        'imgUrl' => Url::to('@web/images/social/whatsapp.svg')
+                    ],
                     'facebook' => [
                         'url' => 'https://www.facebook.com/kivoon.biz',
                         'imgUrl' => Url::to('@web/images/social/facebook.svg')
@@ -38,10 +42,6 @@ $navItems = require __DIR__ . '/_navItems.php';
                         'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link',
                         'imgUrl' => Url::to('@web/images/social/instagram.svg')
                     ],
-                    'whatsapp' => [
-                        'url' => 'https://wa.me/972508833111',
-                        'imgUrl' => Url::to('@web/images/social/whatsapp.svg')
-                    ]
                 ]
             ]) ?>
         </section>
