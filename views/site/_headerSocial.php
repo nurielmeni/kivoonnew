@@ -23,10 +23,10 @@ use yii\helpers\Url;
         'url' => 'https://www.linkedin.com/company/kivoon---human-resources-placement-&-consultation-company/?viewAsMember=true',
         'imgUrl' => Url::to('@web/images/social/linkedin-header.svg')
       ],
-      // 'instagram' => [
-      //   'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link',
-      //   'imgUrl' => Url::to('@web/images/social/instagram.svg')
-      // ],
+      'instagram' => [
+        'url' => 'https://instagram.com/kivoon.hr?utm_medium=copy_link',
+        'imgUrl' => Url::to('@web/images/social/instagram-header.svg')
+      ],
 
     ]
   ]) ?>
