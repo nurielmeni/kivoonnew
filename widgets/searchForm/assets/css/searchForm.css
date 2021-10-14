@@ -35,11 +35,11 @@ div.search-form,
 }
 
 #search-results > div.container.leggend {
+  font-size: 1.3rem;
   padding-bottom: 0;
 }
 
 #search-results > div.container.leggend > p {
-  font-size: 1.3rem;
   margin: 0;
 }
 
