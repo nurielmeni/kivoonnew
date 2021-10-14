@@ -7,12 +7,13 @@
 use app\helpers\Helper;
 
 ?>
-<div class="container leggend">
+<div class="container leggend flex space-between">
     <?php if (count($jobs) === 1) : ?>
         <p><?= Yii::t('app', 'The search completed. one jobs was found.') ?></p>
     <?php else : ?>
         <p><?= Yii::t('app', 'The search completed. {0,number} jobs were found.', count($jobs)) ?></p>
     <?php endif; ?>
+    <a href="\"><?= Yii::t('app', 'Back to search') ?></a>
 </div>
 <div class="container">
     <?php foreach ($jobs as $job) : ?>

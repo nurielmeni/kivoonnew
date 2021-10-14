@@ -49,4 +49,5 @@ return [
     'The contact form request sent successfuly' => 'פרטי יצירת הקשר נשלחו בהצלחה',
     'Requiremets:' => 'דרישות המשרה:',
     'to tob: {jobCode}' => 'עבור משרה: {jobCode}',
+    'Back to search' => 'חזרה לחיפוש',
 ];
