@@ -21,7 +21,6 @@ use app\helpers\Helper;
             <h2 class="w-100 margin-none"><?= Helper::getArrValue($job, 'JobTitle') ?></h2>
             <div class="job-info flex space-between">
                 <div class="right">
-                    <p><?= date('d-m-Y', strtotime(Helper::getArrValue($job, 'UpdateDate'))) ?></p>
                     <p>
                         <strong>
                             <?= Yii::t('app', 'Job Location:') ?>
