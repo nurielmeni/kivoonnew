@@ -169,7 +169,6 @@ form .help-block {
 button[type="submit"],
 button.apply {
   border: none;
-  margin: 2rem 0;
   cursor: pointer;
   height: 3rem;
 }

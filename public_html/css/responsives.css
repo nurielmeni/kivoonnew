@@ -115,6 +115,10 @@
   .xs-up {
     display: block !important;
   }
+
+  button.apply {
+    margin: 2rem 0;
+  }
 }
 
 @media all and (min-width: 920px) {
