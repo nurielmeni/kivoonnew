@@ -107,6 +107,12 @@
   }
 }
 
+@media all and (max-width:767.9px) {
+  button.apply {
+    margin: 2rem 0;
+  }
+}
+
 @media all and (min-width: 768px) {
   .xs-down {
     display: none !important;
@@ -114,10 +120,6 @@
 
   .xs-up {
     display: block !important;
-  }
-
-  button.apply {
-    margin: 2rem 0;
   }
 }
 
